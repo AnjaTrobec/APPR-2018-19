@@ -1,6 +1,6 @@
 # Analiza podatkov s programom R, 2018/19
 
-#Anja Trobec
+# Anja Trobec
 
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 
