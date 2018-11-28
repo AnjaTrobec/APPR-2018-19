@@ -21,7 +21,7 @@ V svojem projektu bom analizirala podatke o porokah in razvezah v Sloveniji. Osr
 * koliko je ovdovelih ljudi v Sloveniji (kakšne so razlike v številu med spoloma – občutno več vdov).
 
 Cilj je pokazati, da se ljudje vedno manj poročajo, se poročajo vedno starejši in vedno več se ločujejo. Podatke bom poiskala na Statističnem uradu Republike Slovenije.
-*https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05E2006S&ti=&path=../Database/Dem_soc/05_prebivalstvo/15_sestava_preb/10_05E20_zakonski_stan/&lang=2
+* https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05E2006S&ti=&path=../Database/Dem_soc/05_prebivalstvo/15_sestava_preb/10_05E20_zakonski_stan/&lang=2
 * https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05M5001S&ti=&path=../Database/Dem_soc/05_prebivalstvo/35_05M50_istospolne_skupnosti/&lang=2
  
 
