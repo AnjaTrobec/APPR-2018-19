@@ -8,25 +8,22 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 * [![RStudio](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/AnjaTrobec/APPR-2018-19/master?urlpath=rstudio) RStudio
 
 ## Tematika
-# Poroke in razveze
-V svojem projektu se bom osredotočila na analizo podatkov o številu sklenitev zakonskih zvez in tudi nasprotnih - razvez. Predstavila bom tudi podatke o splošnem zakonskem stanu slovencev od 15-ega leta naprej.
+# Poroke in razveze v Sloveniji
+V svojem projektu bom analizirala podatke o porokah in razvezah v Sloveniji. Osredotočila se bom na obdobje med letom 2011 do leta 2017. Analizirala bom:
+* povprečno starost ženina in neveste pri vstopu v prvo zakonsko zvezo,
+* število sklenjenih zakonskih zvez med Slovenci letno (pri tej spremenljivki bom zajela daljše časovno obdobje, da bo vidna razlika med številom porok danes in do 30 let nazaj),
+* število porok po regijah – prebivalci katerih regij so bolj nagnjeni k poroki, kje po Sloveniji se poročajo bolj mladi, itd.
+* koliko zakonskih zvez je sklenjeno letno med istospolnimi partnerji,
+* število razvez po regijah,
+* koliko je zakonskih razvez z otroki in koliko brez,
+* število zakonskih razvez v posameznem letu,
+* povprečno trajanje zakonske zveze do ločitve,
+* koliko je ovdovelih ljudi v Sloveniji (kakšne so razlike v številu med spoloma – občutno več vdov).
 
-V svoj projekt bom vključila naslednje podatke:
- * primerjavo po starosti pri vstopu v prvo zakonsko zvezo ali iz nje, tako ženina kot neveste,
- * spreminjanje številk sklenitev in ločitev skozi čas,
- * število sklenitev zvez in razvez pri partnerjih istega spola,
- * kako se številke razlikujejo po regijah (kje se poročajo bolj mladi, kje niso nagnjeni k poroki, kje je največ ločitev, itd.),
- * koliko je ovdovelih ljudi v Sloveniji in kolikšne so razlike med spoloma.
- 
-
-Viri :
+Cilj je pokazati, da se ljudje vedno manj poročajo, se poročajo vedno starejši in vedno več se ločujejo. Podatke bom poiskala na Statističnem uradu Republike Slovenije.
+*https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05E2006S&ti=&path=../Database/Dem_soc/05_prebivalstvo/15_sestava_preb/10_05E20_zakonski_stan/&lang=2
 * https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05M5001S&ti=&path=../Database/Dem_soc/05_prebivalstvo/35_05M50_istospolne_skupnosti/&lang=2
-* https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05M1002S&ti=&path=../Database/Dem_soc/05_prebivalstvo/34_Poroke/05_05M10_poroke-SL/&lang=2
-* https://ec.europa.eu/eurostat/statistics-explained/index.php/Marriages_and_births_in_Slovenia/sl
-* https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05E2002S&ti=&path=../Database/Dem_soc/05_prebivalstvo/15_sestava_preb/10_05E20_zakonski_stan/&lang=2
-* https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05E2006S&ti=&path=../Database/Dem_soc/05_prebivalstvo/15_sestava_preb/10_05E20_zakonski_stan/&lang=2
-* https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05E2010S&ti=&path=../Database/Dem_soc/05_prebivalstvo/15_sestava_preb/10_05E20_zakonski_stan/&lang=2
-* https://pxweb.stat.si/pxweb/Database/Dem_soc/05_prebivalstvo/15_sestava_preb/10_05E20_zakonski_stan/10_05E20_zakonski_stan.asp
+ 
 
 ## Program
 
