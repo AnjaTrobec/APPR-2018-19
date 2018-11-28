@@ -7,10 +7,25 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 * [![Shiny](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/AnjaTrobec/APPR-2018-19/master?urlpath=shiny/APPR-2018-19/projekt.Rmd) Shiny
 * [![RStudio](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/AnjaTrobec/APPR-2018-19/master?urlpath=rstudio) RStudio
 
-## Tematika
+## Poroke in razveze
+V svojem projektu se bom osredotočila na analizo podatkov o številu sklenitev zakonskih zvez in tudi nasprotnih - razvez. Predstavila bom tudi podatke o splošnem zakonskem stanu slovencev od 15-ega leta naprej.
 
-Izbrali si boste temo, s katero se bo vaš projekt ukvarjal.
-Tukaj boste napisali, kje ste dobili podatke, ter kakšen je vaš cilj.
+V svoj projekt bom vključila naslednje podatke:
+ * primerjavo po starosti pri vstopu v prvo zakonsko zvezo ali iz nje, tako ženina kot neveste,
+ * spreminjanje številk sklenitev in ločitev skozi čas,
+ * število sklenitev zvez in razvez pri partnerjih istega spola,
+ * kako se številke razlikujejo po regijah (kje se poročajo bolj mladi, kje niso nagnjeni k poroki, kje je največ ločitev, itd.),
+ * koliko je ovdovelih ljudi v Sloveniji in kolikšne so razlike med spoloma.
+ 
+
+Viri :
+* https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05M5001S&ti=&path=../Database/Dem_soc/05_prebivalstvo/35_05M50_istospolne_skupnosti/&lang=2
+* https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05M1002S&ti=&path=../Database/Dem_soc/05_prebivalstvo/34_Poroke/05_05M10_poroke-SL/&lang=2
+* https://ec.europa.eu/eurostat/statistics-explained/index.php/Marriages_and_births_in_Slovenia/sl
+* https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05E2002S&ti=&path=../Database/Dem_soc/05_prebivalstvo/15_sestava_preb/10_05E20_zakonski_stan/&lang=2
+* https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05E2006S&ti=&path=../Database/Dem_soc/05_prebivalstvo/15_sestava_preb/10_05E20_zakonski_stan/&lang=2
+* https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05E2010S&ti=&path=../Database/Dem_soc/05_prebivalstvo/15_sestava_preb/10_05E20_zakonski_stan/&lang=2
+* https://pxweb.stat.si/pxweb/Database/Dem_soc/05_prebivalstvo/15_sestava_preb/10_05E20_zakonski_stan/10_05E20_zakonski_stan.asp
 
 ## Program
 
