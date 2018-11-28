@@ -7,7 +7,8 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 * [![Shiny](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/AnjaTrobec/APPR-2018-19/master?urlpath=shiny/APPR-2018-19/projekt.Rmd) Shiny
 * [![RStudio](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/AnjaTrobec/APPR-2018-19/master?urlpath=rstudio) RStudio
 
-## Poroke in razveze
+## Tematika
+# Poroke in razveze
 V svojem projektu se bom osredotočila na analizo podatkov o številu sklenitev zakonskih zvez in tudi nasprotnih - razvez. Predstavila bom tudi podatke o splošnem zakonskem stanu slovencev od 15-ega leta naprej.
 
 V svoj projekt bom vključila naslednje podatke:
