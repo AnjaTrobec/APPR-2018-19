@@ -12,4 +12,4 @@ tabela1 <- read.csv2("podatki/poroke-st zvez-povprecna-starost-in-starost-ob-vst
                     
 
 
-tabela2 <- read.csv2("podatki/poroceni-regije-spol-starostna-skupina.csv", dec = ".")
+tabela3 <- read.csv2("podatki/poroceni-regije-spol-starostna-skupina.csv")
