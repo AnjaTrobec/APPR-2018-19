@@ -1,0 +1,48 @@
+"Prebivalstvo, staro 15 ali veè let po: STAROST, LETO, STATISTIÈNA"
+"REGIJA , ZAKONSKI STAN"
+
+" ";"2011";"2012";"2013";"2014";"2015";"2016";"2017";"2018"
+" ";"SLOVENIJA";"SLOVENIJA";"SLOVENIJA";"SLOVENIJA";"SLOVENIJA";"SLOVENIJA";"SLOVENIJA";"SLOVENIJA"
+" ";"Razvezani";"Razvezani";"Razvezani";"Razvezani";"Razvezani";"Razvezani";"Razvezani";"Razvezani"
+"Starost - SKUPAJ";113215;115027;116592;118133;119987;121628;123452;124360
+"15-19 let";2;2;1;1;0;1;0;1
+"20-24 let";133;128;110;94;89;92;82;93
+"25-29 let";861;836;800;791;797;774;757;682
+"30-34 let";3482;3191;3043;2835;2612;2489;2410;2321
+"35-39 let";7502;7259;7030;6696;6412;6089;5838;5548
+"40-44 let";12109;11485;11135;10814;10664;10579;10338;10043
+"45-49 let";16141;16234;16127;15890;15616;14914;14376;13871
+"50-54 let";17870;17687;17677;17891;18081;18328;18447;18296
+"55-59 let";18492;19069;19055;18867;18822;18680;18665;18697
+"60-64 let";13637;14866;15925;16987;17771;18244;18868;18903
+"65-69 let";8106;8665;9293;9959;11143;13043;14177;15189
+"70-74 let";6090;6365;6793;7282;7450;7380;7907;8474
+"75-79 let";4231;4424;4503;4708;5016;5252;5488;5896
+"80-84 let";2829;2965;3078;3151;3211;3255;3439;3522
+"85-89 let";1367;1443;1545;1608;1687;1796;1883;1979
+"90-94 let";300;347;418;504;548;620;666;713
+"95-99 let";56;52;53;50;60;83;100;120
+"100 + let";7;9;6;5;8;9;11;12
+
+"Vir: Statistièni urad Republike Slovenije."
+
+"Povezane vsebine: "
+"- (seznam HREF= http://www.stat.si/StatWeb/File/DocSysFile/7808 "
+"target=_blank) Metodološka pojasnila"
+
+"Stanje na 1.1."
+
+"Podatke o prebivalstvu za stanje 1. 1. 2011 smo v Sloveniji "
+"pripravili tudi v skladu z Uredbo (ES) št. 763/2008 Evropskega "
+"parlamenta in Sveta z dne 9. julija 2008 o popisih prebivalstva in "
+"stanovanj (Uradni list Evropske unije L 218/14, 13. avgust 2008)."
+
+"Podatki so teritorialno razvršèeni po Klasifikaciji statistiènih "
+"teritorialnih enot v Evropski uniji (The Classification  of "
+"Territorial Units for Statistics) – NUTS ((seznam "
+"HREF=http://www.stat.si/StatWeb/glavnanavigacija/metode-in-klasifikac-"
+"ije/klasifikacije TARGET=_blank) opis in pojasnila), raven NUTS 3. "
+"Podatki o spremembah posameznih statistiènih regij so dostopni tudi "
+"na (seznam HREF=http://www.stat.si/dokument/8484 TARGET=_blank) "
+"povezavi."
+
