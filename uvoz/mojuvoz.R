@@ -1,7 +1,15 @@
 #2. faza
-sl <- locale("sl", decimal_mark=",", grouping_mark=".")
+sl <- locale("sl", decimal_mark=".")
 
 library(readr)
-tabela1 <- read_csv2("poroke-st zvez-povprecna-starost-in-starost-ob-vstopu-v-1-zvezo.csv .csv", 
-                     col_names=c("Sklenitve zakonskih zvez - Skupaj","Prve sklenitve zakonskih zvez ženina", "Prve sklenitve zakonskih zvez neveste","Povprečna starost ženina ob sklenitvi zakonske zveze","Povprečna starost neveste ob sklenitvi zakonske zveze","Povprečna starost ženina ob sklenitvi prve zakonske zveze","Povprečna starost neveste ob prvi sklenitvi zakonske zveze"),
-                     locale=locale(encoding="Windows-1250"))
+# tabela1 <- read_csv2("podatki/poroke-st zvez-povprecna-starost-in-starost-ob-vstopu-v-1-zvezo.csv", 
+#                      col_names=c("Leto","Sklenitve zakonskih zvez - Skupaj","Prve sklenitve zakonskih zvez ženina", "Prve sklenitve zakonskih zvez neveste","Povprečna starost ženina ob sklenitvi zakonske zveze","Povprečna starost neveste ob sklenitvi zakonske zveze","Povprečna starost ženina ob sklenitvi prve zakonske zveze","Povprečna starost neveste ob prvi sklenitvi zakonske zveze"), 
+#                      na="-",skip=2,locale=locale(encoding="Windows-1250"))
+
+tabela1 <- read.csv2("podatki/poroke-st zvez-povprecna-starost-in-starost-ob-vstopu-v-1-zvezo.csv",
+                    col.names=c("Leto","Sklenitve zakonskih zvez - Skupaj","Prve sklenitve zakonskih zvez �enina", "Prve sklenitve zakonskih zvez neveste","Povpre�na starost �enina ob sklenitvi zakonske zveze","Povpre�na starost neveste ob sklenitvi zakonske zveze","Povpre�na starost �enina ob sklenitvi prve zakonske zveze","Povpre�na starost neveste ob prvi sklenitvi zakonske zveze"),
+                    skip = 2,dec = ".")
+                    
+
+
+tabela2 <- read.csv2("podatki/poroceni-regije-spol-starostna-skupina.csv", dec = ".")

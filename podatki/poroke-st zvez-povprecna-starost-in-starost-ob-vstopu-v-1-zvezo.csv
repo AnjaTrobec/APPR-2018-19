@@ -1,6 +1,6 @@
 "Osnovni podatki o sklenitvah zakonskih zvez po: LETO , MERITVE"
-
 " ";"Sklenitve zakonskih zvez - Skupaj";"Prve sklenitve zakonskih zvez ženina";"Prve sklenitve zakonskih zvez neveste";"Povprečna starost ženina ob sklenitvi zakonske zveze";"Povprečna starost neveste ob sklenitvi zakonske zveze";"Povprečna starost ženina ob sklenitvi prve zakonske zveze";"Povprečna starost neveste ob prvi sklenitvi zakonske zveze"
+
 "1990";8517;7637;7701;28.7;25.4;26.6;23.8
 "1991";8173;7391;7416;28.6;25.6;26.8;24.0
 "1992";9119;8132;8137;29.3;26.1;27.1;24.2
@@ -37,23 +37,4 @@
 "HREF=http://www.stat.si/StatWeb/Common/PrikaziDokument.ashx?IdDatotek-"
 "e=9490 target=_blank) Metodološka pojasnila"
 
-"Sklenjena zakonska zveza je zveza, ki je bila sklenjena skladno z "
-"veljavnimi zakonskimi predpisi in sta jo sklenili dve osebi "
-"različnega spola."
-
-"Prva sklenjena zakonska zveza ženina je zveza, ki je bila sklenjena "
-"skladno z veljavnimi predpisi in sta jo sklenila samski moški in "
-"samska, ovdovela ali razvezana ženska."
-
-"Prva sklenjena zakonska zveza neveste je zveza, ki je bila sklenjena "
-"skladno z veljavnimi predpisi in sta jo sklenila samska ženska in "
-"samski, ovdovel ali razvezan moški."
-
-"Povprečna starost je tehtana aritmetična sredina starosti ženinov. "
-"Izračunavamo jo iz absolutnih podatkov. Pri izračunu upoštevamo kot "
-"uteži sredine starostnih razredov."
-
-"Povprečna starost je tehtana aritmetična sredina starosti nevest. "
-"Izračunavamo jo iz absolutnih podatkov. Pri izračunu upoštevamo kot "
-"uteži sredine starostnih razredov."
 
