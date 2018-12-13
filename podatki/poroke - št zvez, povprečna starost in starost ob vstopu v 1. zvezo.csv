@@ -1,6 +1,6 @@
 "Osnovni podatki o sklenitvah zakonskih zvez po: LETO , MERITVE"
 
-" ";"Sklenitve zakonskih zvez - Skupaj";"Prve sklenitve zakonskih zvez ženina";"Prve sklenitve zakonskih zvez neveste";"Povpreèna starost ženina ob sklenitvi zakonske zveze";"Povpreèna starost neveste ob sklenitvi zakonske zveze";"Povpreèna starost ženina ob sklenitvi prve zakonske zveze";"Povpreèna starost neveste ob prvi sklenitvi zakonske zveze"
+" ";"Sklenitve zakonskih zvez - Skupaj";"Prve sklenitve zakonskih zvez ?enina";"Prve sklenitve zakonskih zvez neveste";"Povpre?na starost ?enina ob sklenitvi zakonske zveze";"Povpre?na starost neveste ob sklenitvi zakonske zveze";"Povpre?na starost ?enina ob sklenitvi prve zakonske zveze";"Povpre?na starost neveste ob prvi sklenitvi zakonske zveze"
 "1990";8517;7637;7701;28.7;25.4;26.6;23.8
 "1991";8173;7391;7416;28.6;25.6;26.8;24.0
 "1992";9119;8132;8137;29.3;26.1;27.1;24.2
@@ -30,30 +30,5 @@
 "2016";6667;5918;5955;35.3;32.6;31.9;30.0
 "2017";6481;5851;5827;35.3;32.7;32.2;30.1
 
-"Vir: Statistièni urad Republike Slovenije."
 
-"Povezane vsebine: "
-"- (seznam "
-"HREF=http://www.stat.si/StatWeb/Common/PrikaziDokument.ashx?IdDatotek-"
-"e=9490 target=_blank) Metodološka pojasnila"
-
-"Sklenjena zakonska zveza je zveza, ki je bila sklenjena skladno z "
-"veljavnimi zakonskimi predpisi in sta jo sklenili dve osebi "
-"razliènega spola."
-
-"Prva sklenjena zakonska zveza ženina je zveza, ki je bila sklenjena "
-"skladno z veljavnimi predpisi in sta jo sklenila samski moški in "
-"samska, ovdovela ali razvezana ženska."
-
-"Prva sklenjena zakonska zveza neveste je zveza, ki je bila sklenjena "
-"skladno z veljavnimi predpisi in sta jo sklenila samska ženska in "
-"samski, ovdovel ali razvezan moški."
-
-"Povpreèna starost je tehtana aritmetièna sredina starosti ženinov. "
-"Izraèunavamo jo iz absolutnih podatkov. Pri izraèunu upoštevamo kot "
-"uteži sredine starostnih razredov."
-
-"Povpreèna starost je tehtana aritmetièna sredina starosti nevest. "
-"Izraèunavamo jo iz absolutnih podatkov. Pri izraèunu upoštevamo kot "
-"uteži sredine starostnih razredov."
 
