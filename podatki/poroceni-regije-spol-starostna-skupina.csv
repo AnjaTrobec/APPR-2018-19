@@ -1,9 +1,9 @@
-"Prebivalstvo, staro 15 ali veË let po: STATISTI»NA REGIJA, STAROST,"
+"Prebivalstvo, staro 15 ali ve√® let po: STATISTI√àNA REGIJA, STAROST,"
 "ZAKONSKI STAN, LETO , SPOL"
 
-" ";" ";"PoroËeni";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" "
+" ";" ";"Poro√®eni";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" ";" "
 " ";" ";"2011";" ";" ";"2012";" ";" ";"2013";" ";" ";"2014";" ";" ";"2015";" ";" ";"2016";" ";" ";"2017";" ";" ";"2018";" ";" "
-" ";" ";"Spol - SKUPAJ";"Moöki";"éenske";"Spol - SKUPAJ";"Moöki";"éenske";"Spol - SKUPAJ";"Moöki";"éenske";"Spol - SKUPAJ";"Moöki";"éenske";"Spol - SKUPAJ";"Moöki";"éenske";"Spol - SKUPAJ";"Moöki";"éenske";"Spol - SKUPAJ";"Moöki";"éenske";"Spol - SKUPAJ";"Moöki";"éenske"
+" ";" ";"Spol - SKUPAJ";"Mo≈°ki";"≈Ωenske";"Spol - SKUPAJ";"Mo≈°ki";"≈Ωenske";"Spol - SKUPAJ";"Mo≈°ki";"≈Ωenske";"Spol - SKUPAJ";"Mo≈°ki";"≈Ωenske";"Spol - SKUPAJ";"Mo≈°ki";"≈Ωenske";"Spol - SKUPAJ";"Mo≈°ki";"≈Ωenske";"Spol - SKUPAJ";"Mo≈°ki";"≈Ωenske";"Spol - SKUPAJ";"Mo≈°ki";"≈Ωenske"
 "SLOVENIJA"
 " ";"Starost - SKUPAJ";819158;413280;405878;814288;411054;403234;811446;410900;400546;805887;408711;397176;800568;406180;394388;794425;402866;391559;787757;399238;388519;786902;399630;387272
 " ";"15-19 let";198;32;166;163;26;137;137;20;117;161;20;141;135;16;119;120;10;110;122;21;101;101;18;83
@@ -64,7 +64,7 @@
 " ";"90-94 let";108;62;46;137;75;62;158;100;58;177;109;68;181;113;68;203;136;67;237;160;77;279;183;96
 " ";"95-99 let";18;11;7;15;9;6;14;8;6;14;9;5;16;12;4;18;12;6;29;17;12;29;19;10
 " ";"100 + let";4;3;1;4;3;1;3;2;1;2;2;0;1;1;0;1;1;0;2;2;0;1;1;0
-"Koroöka"
+"Koro≈°ka"
 " ";"Starost - SKUPAJ";27219;13714;13505;26973;13593;13380;26800;13521;13279;26536;13390;13146;26312;13276;13036;26109;13170;12939;25738;12981;12757;25734;12994;12740
 " ";"15-19 let";2;1;1;4;1;3;3;1;2;5;1;4;5;0;5;3;0;3;3;0;3;3;0;3
 " ";"20-24 let";96;27;69;90;24;66;91;20;71;106;26;80;84;13;71;89;21;68;74;22;52;95;30;65
@@ -224,7 +224,7 @@
 " ";"90-94 let";18;13;5;19;14;5;28;20;8;32;25;7;34;27;7;38;33;5;53;43;10;47;37;10
 " ";"95-99 let";3;3;0;3;3;0;0;0;0;1;0;1;3;2;1;5;3;2;5;3;2;5;3;2
 " ";"100 + let";1;0;1;1;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
-"Goriöka"
+"Gori≈°ka"
 " ";"Starost - SKUPAJ";52222;26628;25594;51777;26350;25427;51380;26106;25274;50778;25815;24963;50340;25570;24770;49967;25343;24624;49303;24958;24345;48986;24833;24153
 " ";"15-19 let";19;3;16;11;0;11;16;3;13;11;2;9;10;2;8;4;0;4;7;0;7;8;1;7
 " ";"20-24 let";284;82;202;276;79;197;303;78;225;244;65;179;214;48;166;218;45;173;189;37;152;202;46;156
@@ -244,7 +244,7 @@
 " ";"90-94 let";70;58;12;77;64;13;95;79;16;102;86;16;106;92;14;124;104;20;133;107;26;132;102;30
 " ";"95-99 let";13;10;3;5;4;1;5;4;1;1;1;0;8;6;2;14;13;1;18;17;1;17;15;2
 " ";"100 + let";1;0;1;2;1;1;2;1;1;2;1;1;1;0;1;1;0;1;1;0;1;1;1;0
-"Obalno-kraöka"
+"Obalno-kra≈°ka"
 " ";"Starost - SKUPAJ";46685;23712;22973;46450;23556;22894;46357;23599;22758;46160;23494;22666;45793;23293;22500;45341;22968;22373;45071;22805;22266;45103;22903;22200
 " ";"15-19 let";18;1;17;14;1;13;10;0;10;10;0;10;5;0;5;9;0;9;14;2;12;12;1;11
 " ";"20-24 let";320;91;229;318;80;238;309;73;236;268;48;220;267;61;206;235;48;187;251;56;195;252;67;185
@@ -265,25 +265,25 @@
 " ";"95-99 let";10;6;4;3;2;1;2;2;0;1;1;0;9;7;2;12;9;3;10;7;3;9;6;3
 " ";"100 + let";4;1;3;4;2;2;2;2;0;2;2;0;3;3;0;2;2;0;3;3;0;2;2;0
 
-"Vir: StatistiËni urad Republike Slovenije."
+"Vir: Statisti√®ni urad Republike Slovenije."
 
 "Povezane vsebine: "
 "- (seznam HREF= http://www.stat.si/StatWeb/File/DocSysFile/7808 "
-"target=_blank) Metodoloöka pojasnila"
+"target=_blank) Metodolo≈°ka pojasnila"
 
-"Podatki so teritorialno razvröËeni po Klasifikaciji statistiËnih "
+"Podatki so teritorialno razvr≈°√®eni po Klasifikaciji statisti√®nih "
 "teritorialnih enot v Evropski uniji (The Classification  of "
-"Territorial Units for Statistics) ñ NUTS ((seznam "
+"Territorial Units for Statistics) ‚Äì NUTS ((seznam "
 "HREF=http://www.stat.si/StatWeb/glavnanavigacija/metode-in-klasifikac-"
 "ije/klasifikacije TARGET=_blank) opis in pojasnila), raven NUTS 3. "
-"Podatki o spremembah posameznih statistiËnih regij so dostopni tudi "
+"Podatki o spremembah posameznih statisti√®nih regij so dostopni tudi "
 "na (seznam HREF=http://www.stat.si/dokument/8484 TARGET=_blank) "
 "povezavi."
 
 "Stanje na 1.1."
 
 "Podatke o prebivalstvu za stanje 1. 1. 2011 smo v Sloveniji "
-"pripravili tudi v skladu z Uredbo (ES) öt. 763/2008 Evropskega "
+"pripravili tudi v skladu z Uredbo (ES) ≈°t. 763/2008 Evropskega "
 "parlamenta in Sveta z dne 9. julija 2008 o popisih prebivalstva in "
 "stanovanj (Uradni list Evropske unije L 218/14, 13. avgust 2008)."
 
