@@ -26,7 +26,7 @@ source("lib/rstudio.r", encoding="UTF-8")
 
 # Izbira teme
 
-Za vzorec bomo prikazali nekaj podatkov o slovenskih občinah.
+Za temo sem si izbrala poroke in razveze v Sloveniji.
 
 ![](slike/grb.png)
 
@@ -37,6 +37,14 @@ Za vzorec bomo prikazali nekaj podatkov o slovenskih občinah.
 ```{r uvoz, echo=FALSE, message=FALSE}
 source("uvoz/uvoz.r", encoding="UTF-8")
 ```
+Uvozila sem podatke iz Statističnega urada Republike Slovenije.
+Imam 6 tabel - vse v csv obliki.
+
+1. TABELA:
+  - 
+
+
+
 
 Uvozili smo podatke o občinah v obliki CSV s statističnega urada ter v obliki HTML
 z Wikipedije. Podatke imamo v dveh razpredelnicah v obliki *tidy data*.
