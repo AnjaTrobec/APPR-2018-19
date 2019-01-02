@@ -49,13 +49,9 @@ poroceni <- rbind(poroceni.koroska, poroceni.gorenjska, poroceni.primorska, poro
   
   melt(id.vars=c("regija", "starostni.tip"), variable.name="leto", value.name = "stevilo")
           
-#TABELA 2 - podatki o porokah po starostnih skupinah
-#tabela2 <- read.csv2("podatki/poroceni-starost.csv", skip=5, header = TRUE, dec = ".")
-#colnames(tabela2) <- c("starostni.tip", paste0("", 2011:2018))
-
 
 #TABELA 3 - podatki o razvezah
-tabela3 <- read.csv2("podatki/razveze-z-otroci-ali-brezbrez-trajanje-zveze.csv", skip=3, dec = ".")
+tabela3 <- read.csv2("podatki/razveze-z-otroci-ali-brezbrez-trajanje-zveze.csv", skip=3, dec = ".") 
 colnames(tabela3) <- c("Leto","Manj.kot.1.leto","Od.1-4.leta","Od.5-9.let", "Od.10-14.let", "15.ali.vec","Razveze.z.otroki","Razveze.brez.otrok")
                      
 
