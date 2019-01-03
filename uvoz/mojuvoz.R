@@ -58,18 +58,19 @@ colnames(tabela3) <- c("Leto","Manj.kot.1.leto","Od.1-4.leta","Od.5-9.let", "Od.
 
 #TABELA 4 - podatki o porokah med istospolnimi partnerji
 tabela4 <- read.csv2("podatki/zveze-sklenjene-med-istospolnimi-partnerji.csv", skip=3)
-colnames(tabela4) <- c("Leto", "Med.moskima", "Med zenskama")
+colnames(tabela4) <- c("Leto", "Med moskima", "Med zenskama")
 
 
 #TABELA 5 - razvezani po starostnih skupinah
-tabela5 <- read.csv2("podatki/razvezani-starost.csv", skip=3)
-colnames(tabela5) <- c("Leto", paste0("", 2011:2018))
+tabela5 <- read_csv2("podatki/razvezani-starost.csv", skip=3, col_names = c("Leto", paste0("", 2011:2018)),  locale = locale(decimal_mark = ",", grouping_mark = ".")) %>% 
+                      melt(id.vars = "Starost pri razvezi", variable.name = "leto", value.name = "stevilo")
 
 
 
 #TABELA 6 - vdoveli
-tabela6 <- read.csv2("podatki/vdoveli.csv", skip=6)
-colnames(tabela6) <- c("starostni.tip", paste0("", 2011:2018))
+tabela6 <- read_csv2("podatki/vdoveli.csv", skip=6, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = ".")) %>%
+    melt(id.vars = "Starostni tip", variable.name = "leto", value.name = "stevilo")
+
 
 
 
