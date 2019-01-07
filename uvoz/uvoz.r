@@ -1,6 +1,12 @@
 # 2. faza: Uvoz podatkov
 
 sl <- locale("sl", decimal_mark=",", grouping_mark=".")
+install.packages("maptools")
+install.packages("httr")
+install.packages("rvest")
+library(rvest)
+library(maptools)
+library(httr)
 
 # Funkcija, ki uvozi občine iz Wikipedije
 uvozi.obcine <- function() {
@@ -22,11 +28,11 @@ uvozi.obcine <- function() {
     tabela[[col]] <- parse_number(tabela[[col]], na="-", locale=sl)
   }
   for (col in c("obcina", "pokrajina", "regija")) {
+    print(tabela[[col]])
     tabela[[col]] <- factor(tabela[[col]])
   }
   return(tabela)
 }
-
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozi.druzine <- function(obcine) {
   data <- read_csv2("podatki/druzine.csv", col_names=c("obcina", 1:4),

@@ -1,5 +1,7 @@
 # 3. faza: Vizualizacija podatkov
 
+source("C:\\Users\\test\\Documents\\fmf\\R\\APPR-faks\\APPR-2018-19\\lib\\uvozi.zemljevid.r")
+
 # Uvozimo zemljevid.
 zemljevid <- uvozi.zemljevid("http://baza.fmf.uni-lj.si/OB.zip", "OB",
                              pot.zemljevida="OB", encoding="Windows-1250")

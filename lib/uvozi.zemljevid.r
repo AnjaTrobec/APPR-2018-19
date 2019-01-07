@@ -1,4 +1,8 @@
 # Uvoz potrebnih knjižnic
+install.packages("mosaic")
+install.packages("rgdal")
+install.packages("yaml")
+library(yaml)
 library(rgdal)
 library(dplyr)
 library(readr)

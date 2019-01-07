@@ -5,6 +5,7 @@ sl <- locale("sl", decimal_mark = ",", grouping_mark = ".")
 install.packages("tidyr")
 install.packages("readr")
 install.packages("dplyr")
+install.packages("reshape2")
 library(readr)
 library(tidyr)
 library(reshape2)
@@ -58,18 +59,18 @@ colnames(tabela3) <- c("Leto","Manj.kot.1.leto","Od.1-4.leta","Od.5-9.let", "Od.
 
 #TABELA 4 - podatki o porokah med istospolnimi partnerji
 tabela4 <- read.csv2("podatki/zveze-sklenjene-med-istospolnimi-partnerji.csv", skip=3)
-colnames(tabela4) <- c("Leto", "Med moskima", "Med zenskama")
+colnames(tabela4) <- c("Leto", "Med.moskima", "Med.zenskama")
 
 
 #TABELA 5 - razvezani po starostnih skupinah
-tabela5 <- read_csv2("podatki/razvezani-starost.csv", skip=3, col_names = c("Leto", paste0("", 2011:2018)),  locale = locale(decimal_mark = ",", grouping_mark = ".")) %>% 
-                      melt(id.vars = "Starost pri razvezi", variable.name = "leto", value.name = "stevilo")
+tabela5 <- read_csv2("podatki/razvezani-starost.csv", skip=4, col_names = c("starost.pri.razvezi", paste0("", 2011:2018)),  locale = locale(decimal_mark = ",", grouping_mark = ".")) %>% 
+                      melt(id.vars = "starost.pri.razvezi", variable.name = "Leto", value.name = "stevilo")
 
 
 
 #TABELA 6 - vdoveli
-tabela6 <- read_csv2("podatki/vdoveli.csv", skip=6, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = ".")) %>%
-    melt(id.vars = "Starostni tip", variable.name = "leto", value.name = "stevilo")
+tabela6 <- read_csv2("podatki/vdoveli.csv", skip=7, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = ".")) %>%
+    melt(id.vars = "starostni.tip", variable.name = "leto", value.name = "stevilo")
 
 
 
