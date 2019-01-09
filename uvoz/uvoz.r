@@ -5,6 +5,7 @@ install.packages("maptools")
 install.packages("httr")
 install.packages("rvest")
 library(rvest)
+library(reshape2)
 library(maptools)
 library(httr)
 
@@ -16,6 +17,10 @@ uvozi.obcine <- function() {
     .[[1]] %>% html_table(dec=",")
   for (i in 1:ncol(tabela)) {
     if (is.character(tabela[[i]])) {
+      Encoding(tabela[[i]]) <- "UTF-8"
+    }
+    if(is.numeric(tabela[[i]])){
+      tabela[[i]] <- as.character(tabela[[i]])
       Encoding(tabela[[i]]) <- "UTF-8"
     }
   }
@@ -42,7 +47,7 @@ uvozi.druzine <- function(obcine) {
   data$obcina[data$obcina == "Sveti Jurij"] <- "Sveti Jurij ob Ščavnici"
   data <- data %>% melt(id.vars="obcina", variable.name="velikost.druzine",
                         value.name="stevilo.druzin")
-  data$velikost.druzine <- parse_number(data$velikost.druzine)
+  data$velikost.druzine <- parse_number(as.character(data$velikost.druzine), na="-", locale=sl)
   data$obcina <- factor(data$obcina, levels=obcine)
   return(data)
 }
