@@ -19,7 +19,7 @@ uvozi.obcine <- function() {
     if (is.character(tabela[[i]])) {
       Encoding(tabela[[i]]) <- "UTF-8"
     }
-    if(is.numeric(tabela[[i]])){
+    if (is.numeric(tabela[[i]])){
       tabela[[i]] <- as.character(tabela[[i]])
       Encoding(tabela[[i]]) <- "UTF-8"
     }
@@ -33,7 +33,6 @@ uvozi.obcine <- function() {
     tabela[[col]] <- parse_number(tabela[[col]], na="-", locale=sl)
   }
   for (col in c("obcina", "pokrajina", "regija")) {
-    print(tabela[[col]])
     tabela[[col]] <- factor(tabela[[col]])
   }
   return(tabela)
