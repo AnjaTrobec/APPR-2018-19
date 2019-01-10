@@ -59,7 +59,8 @@ colnames(tabela3) <- c("Leto","Manj.kot.1.leto","Od.1-4.leta","Od.5-9.let", "Od.
 
 #TABELA 4 - podatki o porokah med istospolnimi partnerji
 tabela4 <- read.csv2("podatki/zveze-sklenjene-med-istospolnimi-partnerji.csv", skip=3)
-colnames(tabela4) <- c("Leto", "Med.moskima", "Med.zenskama")
+colnames(tabela4) <- c("Leto", "moski", "zenske") 
+tabela4 <- melt(tabela4, measure.vars=c("moski", "zenske"))
 
 
 #TABELA 5 - razvezani po starostnih skupinah
