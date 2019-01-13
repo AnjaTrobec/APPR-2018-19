@@ -63,6 +63,7 @@ colnames(otroci)[1] <- "leto"
 tabela4 <- read.csv2("podatki/zveze-sklenjene-med-istospolnimi-partnerji.csv", skip=3)
 colnames(tabela4) <- c("Leto", "moski", "zenske") 
 tabela4 <- melt(tabela4, measure.vars=c("moski", "zenske"))
+colnames(tabela4) <- c("leto", "spol", "stevilo")
 
 
 #TABELA 5 - razvezani po starostnih skupinah

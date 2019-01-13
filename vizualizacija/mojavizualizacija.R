@@ -10,16 +10,15 @@ library(plotly)
 source("uvoz/mojuvoz.R")
 
 
-
+#==================================================================================================================================================
 #1. primerjava porok med ženskami in moškimi v letih 2007-2017
-istospolne.poroke <- tabela4
 
-p <- ggplot(data=istospolne.poroke, aes(x=Leto, y=value, fill=variable)) +
-  geom_bar(stat="identity", position=position_dodge())
+p <- ggplot(data=tabela4, aes(x=leto, y=stevilo, fill=spol)) +
+  geom_bar(stat="identity", position=position_dodge()) + ggtitle("Istospolne poroke")
 
 print(p)
 
-
+#==================================================================================================================================================
 
 #2. seštela bom po stolpcih in nardila tortni diagram, kako dolga je povprečna zveza
 #torej za vsak stolpec bom seštela vse številke in delila s številom let - dobila bom povprečje
@@ -44,12 +43,13 @@ graf <- trajanje + coord_polar("y", start=0)
 print(graf)
 #ZELO JE GRD, ZIHR JE KKŠNA LEPŠA MOŽNOST
 
+#==================================================================================================================================================
 
 #3. narisala bom zemljevid, seštela po regijah skupaj poročene in obarvala po številu
 # poroceni2 <- head(poroceni, 15) 
 # ggplot(poroceni2, aes(x=starostni.tip, y=stevilo)) + geom_point()
 
-poroceni %>% group_by(regija, leto) %>% summarise(sestevek=sum(stevilo))
+
 poroceni <- poroceni %>% group_by(regija) %>% summarise(sestevek=(sum(stevilo)/8))
 
 
@@ -71,17 +71,18 @@ levels(zemljevid$NAME_1)[levels(zemljevid$NAME_1) %in%
 
 
 poroke <- poroceni[, names(poroceni), drop = F] 
-View(poroceni)
 
 povprecje <- poroke %>% group_by(regija) %>% summarise(poroke = mean(sestevek))
 
-zemljevid.poroke <- ggplot() + geom_polygon(data = povprecje %>% right_join(zemljevid, by = c("regija" = "NAME_1")),
-               aes(x = long, y = lat, group = group, fill = poroke))+
-  xlab("") + ylab("") + ggtitle("Število porok po slovenskih regijah")
+zemljevid.poroke <- (ggplot() + 
+               geom_polygon(data = povprecje %>% right_join(zemljevid, by = c("regija" = "NAME_1")),
+               aes(x = long, y = lat, group = group, fill = poroke)) + xlab("") + ylab("") + ggtitle("Število porok po slovenskih regijah"))
 
 
 zemljevid.poroke + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab",
                                        na.value = "grey50", guide = "colourbar")
+
+#==================================================================================================================================================
 
 #4. razveze z otroki in brez otrok, graf po letih
 otroki <- ggplot(otroci %>% filter(spremenljivka %in% c("Razveze.z.otroki", "Razveze.brez.otrok")),
@@ -92,3 +93,6 @@ otroki <- ggplot(otroci %>% filter(spremenljivka %in% c("Razveze.z.otroki", "Raz
                        breaks = c("Razveze.z.otroki",
                                   "Razveze.brez.otrok"),
                        labels = c("Razveze.z.otroki", "Razveze.brez.otrok"))
+
+
+#==================================================================================================================================================
