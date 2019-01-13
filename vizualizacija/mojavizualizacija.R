@@ -24,22 +24,25 @@ print(p)
 #2. seštela bom po stolpcih in nardila tortni diagram, kako dolga je povprečna zveza
 #torej za vsak stolpec bom seštela vse številke in delila s številom let - dobila bom povprečje
 
-#TRAJANJE ZAKONSKE ZVEZE (ČRTNI DIAGRAM)
+#TRAJANJE ZAKONSKE ZVEZE (ČRTNI DIAGRAM - KAKO ODSTRANIM RAZVEZE Z OTROKI IN BREZ?)
 trajanje <- ggplot(otroci %>% filter(spremenljivka %in% c("Manj.kot.1.leto", "Od.1-4.leta", "Od.5-9.let", "Od.10-14.let", "15.ali.vec")),
   aes(x = leto, y = vrednost, color = spremenljivka)) + geom_line() + xlab("Leto") + ylab("Število") 
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
   scale_color_discrete(name = "Trajanje zakonske zveze",
-                       breaks = c("Manj.kot.1.leto", "Trajanje zakonske zveze 1-4 leta","Trajanje zakonske zveze 5-9 let","Trajanje zakonske zveze 10-14 let", "Trajanje zakonske zveze 15 let ali vec"),
+                       breaks = c("Trajanje zakonske zveze manj kot 1 leto", "Trajanje zakonske zveze 1-4 leta","Trajanje zakonske zveze 5-9 let","Trajanje zakonske zveze 10-14 let", "Trajanje zakonske zveze 15 let ali vec"),
                        labels = c("Pod 1 leto", "1-4 leta", "5-9 let", "10-14 let", "15 let ali več"))
+print(trajanje)
 
-#TRAJANJE ZAKONSKE ZVEZE TORTNI DIAGRAM
+
+#TRAJANJE ZAKONSKE ZVEZE TORTNI DIAGRAM 
 trajanje.zveze <- otroci %>%  filter(spremenljivka %in% c("Manj.kot.1.leto", "Od.1-4.leta", "Od.5-9.let", "Od.10-14.let", "15.ali.vec")) 
 
-trajanje.z <- otroci %>% group_by(spremenljivka) %>% summarise(sestevek=sum(vrednost))
-trajanje <- ggplot(trajanje.z, aes(x= spremenljivka, y=sestevek, fill=spremenljivka))+
+trajanje.z <- otroci %>% group_by(spremenljivka) %>% summarise(sestevek=(sum(vrednost)/27))
+trajanje.z <- head(trajanje.z, -2)
+trajanje <- ggplot(trajanje.z, aes(x = spremenljivka, y = sestevek, fill = spremenljivka))+
   geom_bar(width = 1, stat = "identity")
 graf <- trajanje + coord_polar("y", start=0)
-#treba je popraviti ena velika katastrofa je nastala
+print(graf)
+#ZELO JE GRD, ZIHR JE KKŠNA LEPŠA MOŽNOST
 
 
 #3. narisala bom zemljevid, seštela po regijah skupaj poročene in obarvala po številu
@@ -52,7 +55,6 @@ poroceni <- poroceni %>% group_by(regija) %>% summarise(sestevek=(sum(stevilo)/8
 
 
 # #ZEMLJEVID
-install.packages("maptools")
 library(sp)
 library(maptools)
 library(digest)
@@ -69,22 +71,17 @@ levels(zemljevid$NAME_1)[levels(zemljevid$NAME_1) %in%
 
 
 poroke <- poroceni[, names(poroceni), drop = F] 
+View(poroceni)
 
-povprecje <- poroke %>% group_by(regija) %>% summarise(poroke = mean(stevilo))
+povprecje <- poroke %>% group_by(regija) %>% summarise(poroke = mean(sestevek))
 
-zemljevid.poroke <- ggplot() +
-  geom_polygon(data = povprecje %>% right_join(zemljevid, by = c("regija" = "NAME_1")),
+zemljevid.poroke <- ggplot() + geom_polygon(data = povprecje %>% right_join(zemljevid, by = c("regija" = "NAME_1")),
                aes(x = long, y = lat, group = group, fill = poroke))+
   xlab("") + ylab("") + ggtitle("Število porok po slovenskih regijah")
 
-zemljevid.poroke + scale_fill_gradient(low='green', high='red')
 
 zemljevid.poroke + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab",
                                        na.value = "grey50", guide = "colourbar")
-
-
-
-
 
 #4. razveze z otroki in brez otrok, graf po letih
 otroki <- ggplot(otroci %>% filter(spremenljivka %in% c("Razveze.z.otroki", "Razveze.brez.otrok")),
