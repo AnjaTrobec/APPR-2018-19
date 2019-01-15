@@ -15,42 +15,44 @@ print(povpr.starost)
 #==================================================================================================================================================
 #2. POROKE PO REGIJAH
 
-#ZEMLJEVID - 1. poskus - ne dela :(
+#ZEMLJEVID - 1. poskus
 source('lib/uvozi.zemljevid.r')
 
 Slovenija <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
-                             "SVN_adm1") %>% fortify()
+                             "SVN_adm1", encoding = "Windows-1250") %>% fortify()
 
 ggplot(Slovenija, aes(x=long, y=lat, group=group, fill=NAME_1)) +
   geom_polygon() +
-  labs(title="Slovenija - brez podatkov") +
+  labs(title="Slovenija po regijah") +
   theme(legend.position="none")
 
+
+# levels(zemljevid$NAME_1)[levels(zemljevid$NAME_1) %in% c("Notranjsko-kraška","Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- c("Primorsko-notranjska", "Posavska", "Koroska", "Goriska", "Obalno-kraska")
+# 
+# poroke <- poroceni[, names(poroceni), drop = F]
+# 
+# 
+# zemljevid.poroke <- ggplot() + geom_polygon(data = poroke %>% right_join(zemljevid, by = c("regija" = "NAME_1")),
+#                aes(x = long, y = lat, group = group, fill = poroke)) +
+#                xlab("") + ylab("") + ggtitle("Število porok po slovenskih regijah")
+# 
+# 
+# zemljevid.poroke + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab",
+#                                        na.value = "grey50", guide = "colourbar")
+
+
 #==================================================================================================================
-#ZEMLJEVID - 2. poskus - ne dela
-library(sp)
-library(maptools)
-library(digest)
-gpclibPermit()
-source('lib/uvozi.zemljevid.r')
+# #ZEMLJEVID - 2. poskus - ne dela
+# library(sp)
+# library(maptools)
+# library(digest)
+# gpclibPermit()
+# source('lib/uvozi.zemljevid.r')
+# 
+# zemljevid <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
+#                              "SVN_adm1", encoding="Windows-1250") %>% pretvori.zemljevid()
+# 
 
-zemljevid <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
-                             "SVN_adm1", encoding = "") %>% pretvori.zemljevid()
-
-
-levels(zemljevid$NAME_1)[levels(zemljevid$NAME_1) %in%
-                           c("Notranjsko-kraška","Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- c("Primorsko-notranjska", "Posavska", "Koroska", "Goriska", "Obalno-kraska")
-
-poroke <- poroceni[, names(poroceni), drop = F] 
-
-
-zemljevid.poroke <- ggplot() + geom_polygon(data = poroke %>% right_join(zemljevid, by = c("regija" = "NAME_1")),
-               aes(x = long, y = lat, group = group, fill = poroke)) +
-               xlab("") + ylab("") + ggtitle("Število porok po slovenskih regijah")
-
-
-zemljevid.poroke + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab",
-                                       na.value = "grey50", guide = "colourbar")
 
 #==================================================================================================================================================
 #3.TRAJANJE ZAKONSKE ZVEZE DO RAZVEZE
