@@ -10,13 +10,14 @@ library(dplyr)
 
 sl <- locale(encoding = "Windows-1250")
 
-
+#=========================================================================================================================================================================================================================================================================================
 #TABELA 1 - podatki o številu skenjenih zvez letno in povprečna starost pri vstopu v zakonsko zvezo
 tabela1 <- read.csv2("podatki/poroke-st zvez-povprecna-starost-in-starost-ob-vstopu-v-1-zvezo.csv", skip = 2,dec = ".")
 colnames(tabela1) <- c("Leto","Stevilo.sklenjenih.zakonskih.zvez","Prve.sklenitve.zakonskih.zvez.zenina", "Prve.sklenitve.zakonskih.zvez.neveste","Povprecna.starost.zenina","Povprecna.starost.neveste","Povprecna.starost.zenina.prva.zveza","Povprecna.starost.neveste.prva.zveza")
 tabela1A <- subset(tabela1, select = c("Leto","Stevilo.sklenjenih.zakonskih.zvez", "Povprecna.starost.zenina", "Povprecna.starost.neveste"))
 #NEZNAM SPRAVIT V TIDY DATA
 
+#=========================================================================================================================================================================================================================================================================================
 #TABELA 2 - podatki o porokah po regijah
 
 poroceni.koroska <- read_csv2("podatki/poroceni-koroska.csv", skip=4, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = "."))
@@ -49,6 +50,7 @@ poroceni <- rbind(poroceni.koroska, poroceni.gorenjska, poroceni.primorska, poro
   melt(id.vars=c("regija", "starostni.tip"), variable.name="leto", value.name = "stevilo")
           
 
+#=========================================================================================================================================================================================================================================================================================
 #TABELA 3 - podatki o razvezah
 tabela3 <- read.csv2("podatki/razveze-z-otroci-ali-brezbrez-trajanje-zveze.csv", skip=3, dec = ".") 
 colnames(tabela3) <- c("Leto","Manj.kot.1.leto","Od.1-4.leta","Od.5-9.let", "Od.10-14.let", "15.ali.vec","Razveze.z.otroki","Razveze.brez.otrok")
@@ -56,25 +58,25 @@ tabela3 <- tabela3 %>% melt(value.name = "vrednost", variable.name = "spremenlji
 colnames(tabela3)[1] <- "leto"
 
 
-
+#=========================================================================================================================================================================================================================================================================================
 #TABELA 4 - podatki o porokah med istospolnimi partnerji
 tabela4 <- read.csv2("podatki/zveze-sklenjene-med-istospolnimi-partnerji.csv", skip=3)
 colnames(tabela4) <- c("Leto", "moski", "zenske") 
 tabela4 <- melt(tabela4, measure.vars=c("moski", "zenske"))
 colnames(tabela4) <- c("leto", "spol", "stevilo")
 
-
+#=========================================================================================================================================================================================================================================================================================
 #TABELA 5 - razvezani po starostnih skupinah
 tabela5 <- read_csv2("podatki/razvezani-starost.csv", skip=4, col_names = c("starost.pri.razvezi", paste0("", 2011:2018)),  locale = locale(decimal_mark = ",", grouping_mark = ".")) %>% 
                       melt(id.vars = "starost.pri.razvezi", variable.name = "Leto", value.name = "Stevilo")
 
 
-
+#=========================================================================================================================================================================================================================================================================================
 #TABELA 6 - vdoveli
 tabela6 <- read_csv2("podatki/vdoveli.csv", skip=7, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = ".")) %>%
-    melt(id.vars = "starostni.tip", variable.name = "leto", value.name = "stevilo")
+                      melt(id.vars = "starostni.tip", variable.name = "leto", value.name = "stevilo")
 
-
+#=========================================================================================================================================================================================================================================================================================
 
 
 
