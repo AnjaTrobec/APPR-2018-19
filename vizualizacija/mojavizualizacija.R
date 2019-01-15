@@ -48,45 +48,57 @@ print(graf)
 #3. narisala bom zemljevid, seštela po regijah skupaj poročene in obarvala po številu
 # poroceni2 <- head(poroceni, 15) 
 # ggplot(poroceni2, aes(x=starostni.tip, y=stevilo)) + geom_point()
+# 
+# 
+# poroceni <- poroceni %>% group_by(regija) %>% summarise(sestevek=(sum(stevilo)/8))
+# 
+# 
+# 
+# # #ZEMLJEVID
+# library(sp)
+# library(maptools)
+# library(digest)
+# gpclibPermit()
+# 
+# source('lib/uvozi.zemljevid.r')
+# 
+# 
+# levels(zemljevid$NAME_1)[levels(zemljevid$NAME_1) %in%
+#                            c("Notranjsko-kraška",
+#                              "Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- c("Primorsko-notranjska",
+#                                                                                              "Posavska", "Koroska", "Goriska", "Obalno-kraska")
+# 
+# 
+# poroke <- poroceni[, names(poroceni), drop = F] 
+# 
+# povprecje <- poroke %>% group_by(regija) %>% summarise(poroke = mean(sestevek))
+# 
+# zemljevid.poroke <- (ggplot() + 
+#                geom_polygon(data = povprecje %>% right_join(zemljevid, by = c("regija" = "NAME_1")),
+#                aes(x = long, y = lat, group = group, fill = poroke)) + xlab("") + ylab("") + ggtitle("Število porok po slovenskih regijah"))
+# 
+# 
+# zemljevid.poroke + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab",
+#                                        na.value = "grey50", guide = "colourbar")
+# 
+
+#################################################################################
+source('lib/uvozi.zemljevid.r')
+
+Slovenija <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
+                             "SVN_adm1") %>% fortify()
 
 
-poroceni <- poroceni %>% group_by(regija) %>% summarise(sestevek=(sum(stevilo)/8))
-
-
-
-# #ZEMLJEVID
-library(sp)
-library(maptools)
-library(digest)
-gpclibPermit()
-
-zemljevid <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
-                             "SVN_adm1", encoding = "") %>% pretvori.zemljevid()
-
-
-levels(zemljevid$NAME_1)[levels(zemljevid$NAME_1) %in%
-                           c("Notranjsko-kraška",
-                             "Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- c("Primorsko-notranjska",
-                                                                                             "Posavska", "Koroska", "Goriska", "Obalno-kraska")
-
-
-poroke <- poroceni[, names(poroceni), drop = F] 
-
-povprecje <- poroke %>% group_by(regija) %>% summarise(poroke = mean(sestevek))
-
-zemljevid.poroke <- (ggplot() + 
-               geom_polygon(data = povprecje %>% right_join(zemljevid, by = c("regija" = "NAME_1")),
-               aes(x = long, y = lat, group = group, fill = poroke)) + xlab("") + ylab("") + ggtitle("Število porok po slovenskih regijah"))
-
-
-zemljevid.poroke + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab",
-                                       na.value = "grey50", guide = "colourbar")
+ggplot(Slovenija, aes(x=long, y=lat, group=group, fill=NAME_1)) +
+  geom_polygon() +
+  labs(title="Slovenija - brez podatkov") +
+  theme(legend.position="none")
 
 #==================================================================================================================================================
 
 #4. razveze z otroki in brez otrok, graf po letih
 otroki <- ggplot(otroci %>% filter(spremenljivka %in% c("Razveze.z.otroki", "Razveze.brez.otrok")),
-  aes(x = Leto, y = vrednost, color = spremenljivka)) + geom_line() +
+  aes(x = leto, y = vrednost, color = spremenljivka)) + geom_line() +
   xlab("Leto") + ylab("Število") +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
   scale_color_discrete(name = "Legenda",
@@ -94,5 +106,5 @@ otroki <- ggplot(otroci %>% filter(spremenljivka %in% c("Razveze.z.otroki", "Raz
                                   "Razveze.brez.otrok"),
                        labels = c("Razveze.z.otroki", "Razveze.brez.otrok"))
 
-
+print(otroki)
 #==================================================================================================================================================
