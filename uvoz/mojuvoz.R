@@ -2,7 +2,10 @@
 
 sl <- locale("sl", decimal_mark = ",", grouping_mark = ".")
 
-install.packages("gsubfn")
+# install.packages("gsubfn")
+# install.packages("dplyr")
+# install.packages("colorspace")
+library(colorspace)
 library(gsubfn)
 library(readr)
 library(tidyr)

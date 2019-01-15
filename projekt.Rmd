@@ -78,7 +78,8 @@ Imam 6 tabel - vse v csv obliki, urejene v tidy data.
 # Analiza in vizualizacija podatkov
 
 ```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
-source("vizualizacija/mojavizualizacija.R", encoding="UTF-8")
+source("vizualizacija/vizualizacija.R")
+source("vizualizacija/mojavizualizacija.R")
 ```
 
 Cilj moje naloge je bil pokazati, da število razvez z leti narašča in to da se ljudje poročajo kasneje. Potrditev teh dveh hipotez lahko najdemo na spodnjih grafih.

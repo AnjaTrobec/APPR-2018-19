@@ -1,11 +1,12 @@
 # 2. faza: Uvoz podatkov
 
 sl <- locale("sl", decimal_mark=",", grouping_mark=".")
-install.packages("maptools")
-install.packages("httr")
-install.packages("rvest")
+# install.packages("maptools")
+# install.packages("httr")
+# install.packages("rvest")
 library(rvest)
 library(reshape2)
+library(rgeos)
 library(maptools)
 library(httr)
 
