@@ -2,7 +2,8 @@
 
 sl <- locale("sl", decimal_mark = ",", grouping_mark = ".")
 
-
+install.packages("gsubfn")
+library(gsubfn)
 library(readr)
 library(tidyr)
 library(reshape2)

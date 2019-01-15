@@ -1,8 +1,4 @@
 # Uvoz potrebnih knjižnic
-install.packages("mosaic")
-install.packages("rgdal")
-install.packages("yaml")
-library(yaml)
 library(rgdal)
 library(dplyr)
 library(readr)
@@ -54,8 +50,8 @@ uvozi.zemljevid <- function(url, ime.zemljevida, pot.zemljevida="",
                                       function(x)
                                         paste(c(x[1:(length(x)-1)], tolower(x[length(x)])),
                                               collapse="."))))
-  zemljevid <- readOGR(paste0(pot, ime.zemljevida, '.shp'), ime.zemljevida)
-
+  zemljevid <- readOGR(shp, ime.zemljevida)
+  
   if (!is.null(encoding)) {
     loc <- locale(encoding=encoding)
     for (col in names(zemljevid)) {

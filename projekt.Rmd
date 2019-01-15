@@ -9,7 +9,7 @@ output:
     latex_engine: xelatex
 ---
 
-{r setup, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+```{r setup, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 # Če želimo nastaviti pisave v PDF-ju, odkomentiramo
 # in sledimo navodilom v programu.
 #source("fontconfig.r", encoding="UTF-8")
@@ -28,7 +28,6 @@ source("lib/rstudio.r")
 Za temo sem si izbrala poroke in razveze v Sloveniji. 
 Analizirala bom podatke o številu porok po letih, o povprečni starosti ob vstopu v zakonsko zvezo, podatke o istospolnih porokah in številu porok po regijah. Poleg tega, pa bom analizirala tudi številke o razvezah letno, povprečnih trajanjih zveze in številu otrok ob izstopu iz zveze.
 
-***
 
 # Obdelava, uvoz in čiščenje podatkov
 
