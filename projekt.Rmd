@@ -15,12 +15,12 @@ output:
 #source("fontconfig.r", encoding="UTF-8")
 
 # Uvoz vseh potrebnih knjižnic
-source("lib/libraries.r", encoding="UTF-8")
+source("lib/libraries.r")
 ```
 
 ```{r rstudio, echo=FALSE, results='asis'}
 # Izris povezave do RStudia na Binderju
-source("lib/rstudio.r", encoding="UTF-8")
+source("lib/rstudio.r")
 ```
 
 # Izbira teme
@@ -33,8 +33,10 @@ Analizirala bom podatke o številu porok po letih, o povprečni starosti ob vsto
 # Obdelava, uvoz in čiščenje podatkov
 
 ```{r uvoz, echo=FALSE, message=FALSE}
-source("uvoz/uvoz.r", encoding="UTF-8")
+source("uvoz/uvoz.r")
+source("uvoz/mojuvoz.r")
 ```
+
 Uvozila sem podatke iz Statističnega urada Republike Slovenije.
 Imam 6 tabel - vse v csv obliki, urejene v tidy data.
 
@@ -77,8 +79,18 @@ Imam 6 tabel - vse v csv obliki, urejene v tidy data.
 # Analiza in vizualizacija podatkov
 
 ```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
-source("vizualizacija/vizualizacija.r", encoding="UTF-8")
+source("vizualizacija/mojavizualizacija.R", encoding="UTF-8")
 ```
+
+Cilj moje naloge je bil pokazati, da število razvez z leti narašča in to da se ljudje poročajo kasneje. Potrditev teh dveh hipotez lahko najdemo na spodnjih grafih.
+
+
+Spodnji krivulji prikazujeta povprečno starost ženina in neveste ob sklenitvi zakonske zveze. Opazovano obdobje je od leta 1990 pa vse do danes. Kot vidimo, se ljudje poročajo vedno kasneje.
+
+```{r povpr.starost, echo=FALSE, message=FALSE, fig.align='center'}
+print(povpr.starost)
+```
+
 
 Spodnja 2 grafa prikazujeta povprečno trajanje zakonske zveze do ločitve. 
 Situacijo sem želela predstaviti v dveh oblikah, da še procentualno vidimo kaj pomenijo te številke.
@@ -87,8 +99,8 @@ Situacijo sem želela predstaviti v dveh oblikah, da še procentualno vidimo kaj
 print(trajanje)
 ```
 
-```{r graf, echo=FALSE, message=FALSE, fig.align='center'}
-print(graf)
+```{r trajanje.z, echo=FALSE, message=FALSE, fig.align='center'}
+print(trajanje.z)
 ```
 
 

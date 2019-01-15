@@ -8,9 +8,10 @@ source("uvoz/mojuvoz.R")
 
 
 #1. POVPREČNA STAROST PRI VSTOPU V ZAKONSKO ZVEZO
-# starost <- ggplot(tabela1A %>% filter(spremenljivka %in% c("Povrecna.starost.zenina", "Povrecna.starost.neveste")),
-#                   aes(x= Leto, y = c("Povrecna.starost.zenina", "Povrecna.starost.neveste"), color = spremenljivka)) + geom_line()
+povpr.starost <- ggplot(tabela1A %>% filter(Spremenljivka %in% c("Povprecna.starost.zenina", "Povprecna.starost.neveste")),
+                  aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() + xlab("Leto") + ylab("Število") 
 
+print(povpr.starost)
 #==================================================================================================================================================
 #2. POROKE PO REGIJAH
 
@@ -24,7 +25,6 @@ ggplot(Slovenija, aes(x=long, y=lat, group=group, fill=NAME_1)) +
   geom_polygon() +
   labs(title="Slovenija - brez podatkov") +
   theme(legend.position="none")
-
 
 #==================================================================================================================
 #ZEMLJEVID - 2. poskus - ne dela
@@ -71,8 +71,8 @@ trajanje.z <- tabela3 %>% group_by(spremenljivka) %>% summarise(sestevek=(sum(vr
 trajanje.z <- head(trajanje.z, -2)
 trajanje.z <- ggplot(trajanje.z, aes(x = spremenljivka, y = sestevek, fill = spremenljivka))+
   geom_bar(width = 1, stat = "identity")
-graf <- trajanje.z + coord_polar("y", start=0)
-print(graf)
+trajanje.z <- trajanje.z + coord_polar("y", start=0)
+print(trajanje.z)
 #ZELO JE GRD, ZIHR JE KKŠNA LEPŠA MOŽNOST
 
 #==================================================================================================================================================
