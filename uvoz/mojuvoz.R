@@ -2,10 +2,7 @@
 
 sl <- locale("sl", decimal_mark = ",", grouping_mark = ".")
 
-install.packages("tidyr")
-install.packages("readr")
-install.packages("dplyr")
-install.packages("reshape2")
+
 library(readr)
 library(tidyr)
 library(reshape2)
@@ -17,9 +14,10 @@ sl <- locale(encoding = "Windows-1250")
 #TABELA 1 - podatki o številu skenjenih zvez letno in povprečna starost pri vstopu v zakonsko zvezo
 tabela1 <- read.csv2("podatki/poroke-st zvez-povprecna-starost-in-starost-ob-vstopu-v-1-zvezo.csv", skip = 2,dec = ".")
 colnames(tabela1) <- c("Leto","Stevilo.sklenjenih.zakonskih.zvez","Prve.sklenitve.zakonskih.zvez.zenina", "Prve.sklenitve.zakonskih.zvez.neveste","Povprecna.starost.zenina","Povprecna.starost.neveste","Povprecna.starost.zenina.prva.zveza","Povprecna.starost.neveste.prva.zveza")
+tabela1A <- subset(tabela1, select = c("Leto","Stevilo.sklenjenih.zakonskih.zvez", "Povprecna.starost.zenina", "Povprecna.starost.neveste"))
+#NEZNAM SPRAVIT V TIDY DATA
 
-
-#TABELA 2 IZBOLJŠANA - podatki o porokah po regijah - imam 12 tabel, za vsako regijo posebej - kako naj jih spravim v eno?
+#TABELA 2 - podatki o porokah po regijah
 
 poroceni.koroska <- read_csv2("podatki/poroceni-koroska.csv", skip=4, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = "."))
 poroceni.koroska$regija <- c("Koroška")
@@ -54,8 +52,8 @@ poroceni <- rbind(poroceni.koroska, poroceni.gorenjska, poroceni.primorska, poro
 #TABELA 3 - podatki o razvezah
 tabela3 <- read.csv2("podatki/razveze-z-otroci-ali-brezbrez-trajanje-zveze.csv", skip=3, dec = ".") 
 colnames(tabela3) <- c("Leto","Manj.kot.1.leto","Od.1-4.leta","Od.5-9.let", "Od.10-14.let", "15.ali.vec","Razveze.z.otroki","Razveze.brez.otrok")
-otroci <- tabela3 %>% melt(value.name = "vrednost", variable.name = "spremenljivka", id.vars = 1)
-colnames(otroci)[1] <- "leto"
+tabela3 <- tabela3 %>% melt(value.name = "vrednost", variable.name = "spremenljivka", id.vars = 1)
+colnames(tabela3)[1] <- "leto"
 
 
 
@@ -68,7 +66,7 @@ colnames(tabela4) <- c("leto", "spol", "stevilo")
 
 #TABELA 5 - razvezani po starostnih skupinah
 tabela5 <- read_csv2("podatki/razvezani-starost.csv", skip=4, col_names = c("starost.pri.razvezi", paste0("", 2011:2018)),  locale = locale(decimal_mark = ",", grouping_mark = ".")) %>% 
-                      melt(id.vars = "starost.pri.razvezi", variable.name = "Leto", value.name = "stevilo")
+                      melt(id.vars = "starost.pri.razvezi", variable.name = "Leto", value.name = "Stevilo")
 
 
 
