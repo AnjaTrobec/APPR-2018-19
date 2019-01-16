@@ -23,6 +23,9 @@ source("lib/libraries.r")
 source("lib/rstudio.r")
 ```
 
+![](https://www.clipartmax.com/png/middle/120-1209054_wedding-invitation-bridegroom-marriage-wedding-cartoon.png)
+
+
 # Izbira teme
 
 Za temo sem si izbrala poroke in razveze v Sloveniji. 
@@ -32,37 +35,46 @@ Analizirala bom podatke o številu porok po letih, o povprečni starosti ob vsto
 # Obdelava, uvoz in čiščenje podatkov
 
 ```{r uvoz, echo=FALSE, message=FALSE}
-source("uvoz/uvoz.r")
+
 source("uvoz/mojuvoz.r")
 ```
 
 Uvozila sem podatke iz Statističnega urada Republike Slovenije.
-Imam 6 tabel - vse v csv obliki, urejene v tidy data.
+Imam 6 tabel - vse v csv obliki.
 
 1. TABELA - podatki o številu skenjenih zvez letno in povprečna starost ob vstopu v zakonsko zvezo
+    - 'leto' - spremenljivka: časovno obdobje med 1991 - 2017
+    - 'povprecna starost zenina' - spremenljivka: povprecna starost zenina ob vstopu v zakonsko zvezo
+    - 'povprecna starost neveste' - spremenljivka: povprecna starost neveste ob vstopu v zakonsko zvezo
+    - 'stevilo sklenjenih zvez' - spremenljivka: stevilo sklenjenih zakonskih zvez v določenem obdobju
 
-2. TABELA - podatki o porokah po regijah
-    - 'regija' - spremenljivka: poroke glede na slovenske regije
+
+2. TABELA - podatki o porokah po regijah 
+    - 'regija' - spremenljivka: poroke glede na regije
     - 'sestevek' - meritev: povprečno število porok v dotični regiji v določenem obdobju
     
+    
 3. TABELA - podatki o razvezah
-    - 'leto' - spremenljivka: časovno obdobje med 1990 - 2017
-    - 'kategorije' - spremenljivka: kategorije po trajanju zakonske zveze in podatki o otrokih ob razvezi
-    - 'stevilo' - meritev: število razvez po kategorijah
+    - 'leto' - spremenljivka: leto v času meritve, v obdobju med 1990 - 2017
+    - 'trajanje zakonske zveze po razredih' - spremenljivka: število ločitev pri določenem trajanju zveze
+    - 'otroci ali brez otrok' - spremenljivka: ali so zakonci pri ločitvi že imeli otroke ali ne - število takih z otroki in število brez njih
+    
     
 4. TABELA - podatki o porokah med istospolnimi partnerji 
-    - 'leto' - spremenljivka: časovno obdobje med 2007 - 2017
+    - 'leto' - spremenljivka: leto v času meritve, v obdobju med 2007 - 2017
     - 'spol' - spremenljivka: moške ali ženske istospolne poroke
     - 'stevilo' - meritev: število porok med določenim spolom v določenem letu
     
+    
 5. TABELA - razvezani po starostnih skupinah
     - 'starost pri razvezi' - spremenljivka: razvezani glede na starost
-    - 'leto' - spremenljivka: časovno obdobje med 2011 - 2018
+    - 'leto' - spremenljivka: leto v času meritve, v obdobju med 2011 - 2018
     - 'stevilo' - meritev: število razvezanih v določenem letu
+    
     
 6. TABELA - vdoveli
     - 'starostni tip' - spremenljivka: starost vdovelega
-    - 'leto' - spremenljivka: časovno obdobje med 2011 - 2018
+    - 'leto' - spremenljivka: leto v času meritve, v obdobju med 2011 - 2018
     - 'stevilo' - meritev: število vdovelih
 
 
@@ -78,7 +90,6 @@ Imam 6 tabel - vse v csv obliki, urejene v tidy data.
 # Analiza in vizualizacija podatkov
 
 ```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
-source("vizualizacija/vizualizacija.R")
 source("vizualizacija/mojavizualizacija.R")
 ```
 
@@ -135,40 +146,3 @@ print(otroki)
 
 
 
-Spodnji zemljevid prikazuje povprečno velikost družine za vsako občino.
-
-```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid povprečnega števila otrok v družini'}
-ggplot() + geom_polygon(data=left_join(zemljevid, povprecja, by=c("OB_UIME"="obcina")),
-                        aes(x=long, y=lat, group=group, fill=povprecje)) +
-  ggtitle("Povprečno število otrok v družini") + xlab("") + ylab("") +
-  guides(fill=guide_colorbar(title="Povprečje"))
-```
-
-
-
-
-
-
-
-
-***
-
-# Napredna analiza podatkov
-
-```{r analiza, echo=FALSE, message=FALSE}
-source("analiza/analiza.r", encoding="UTF-8")
-```
-
-Spodnji graf prikazuje povezavo med številom naselij in površino občine.
-
-```{r graf, echo=FALSE, fig.align='center', fig.cap='Povezava med številom naselij in površino občine'}
-ggplot(inner_join(obcine, data.frame(obcina=names(skupine),
-                                     skupina=factor(skupine)), by="obcina")
-, aes(x=povrsina, y=naselja, color=skupina, size=prebivalci/1000)) + geom_point() +
-  ggtitle("Število naselij glede na površino občine") +
-  xlab(expression("Površina (km"^2 * ")")) + ylab("Št. naselij") +
-  guides(color=guide_legend(title="Skupina"),
-         size=guide_legend(title="Prebivalci (* 1000)"))
-```
-
-```
