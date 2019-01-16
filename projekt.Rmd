@@ -136,7 +136,22 @@ print(otroki)
 ```
 
 
+<!-- # Analiza in vizualizacija podatkov -->
 
+<!-- ```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'} -->
+<!-- source("vizualizacija/mojavizualizacija.R") -->
+<!-- ``` -->
+
+<!-- Spodnji zemljevid prikazuje povprečno število porok po regijah. -->
+
+<!-- ```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid povprečnega števila porok po regijah'} -->
+<!-- ggplot() + geom_polygon(data=left_join(zemljevid, poroceni, by=c("OB_UIME"="obcina")), -->
+<!--                         aes(x=long, y=lat, group=group, fill=poroceni)) + -->
+<!--   ggtitle("Zemljevid povprečnega števila porok po regijah") + xlab("") + ylab("") + -->
+<!--   guides(fill=guide_colorbar(title="Povprečje")) -->
+<!-- ``` -->
+
+<!-- *** -->
 
 
 

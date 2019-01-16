@@ -26,19 +26,10 @@ ggplot(Slovenija, aes(x=long, y=lat, group=group, fill=NAME_1)) +
   labs(title="Slovenija po regijah") +
   theme(legend.position="none")
 
-
-# levels(zemljevid$NAME_1)[levels(zemljevid$NAME_1) %in% c("Notranjsko-kraška","Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- c("Primorsko-notranjska", "Posavska", "Koroska", "Goriska", "Obalno-kraska")
-# 
-# poroke <- poroceni[, names(poroceni), drop = F]
-# 
-# 
-# zemljevid.poroke <- ggplot() + geom_polygon(data = poroke %>% right_join(zemljevid, by = c("regija" = "NAME_1")),
-#                aes(x = long, y = lat, group = group, fill = poroke)) +
-#                xlab("") + ylab("") + ggtitle("Število porok po slovenskih regijah")
-# 
-# 
-# zemljevid.poroke + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab",
-#                                        na.value = "grey50", guide = "colourbar")
+levels(zemljevid$OB_UIME) <- levels(zemljevid$OB_UIME) %>%
+{ gsub("Slovenskih", "Slov.", .) } %>% { gsub("-", " - ", .) }
+zemljevid$OB_UIME <- factor(zemljevid$OB_UIME, levels=levels(obcine$obcina))
+zemljevid <- fortify(zemljevid)
 
 
 #==================================================================================================================
