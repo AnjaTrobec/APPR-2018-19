@@ -36,7 +36,7 @@ Analizirala bom podatke o številu porok po letih, o povprečni starosti ob vsto
 
 ```{r uvoz, echo=FALSE, message=FALSE}
 
-source("uvoz/mojuvoz.r")
+source("uvoz/mojuvoz.R")
 ```
 
 Uvozila sem podatke iz Statističnega urada Republike Slovenije.
@@ -54,7 +54,7 @@ Imam 6 tabel - vse v csv obliki.
     - 'sestevek' - meritev: povprečno število porok v dotični regiji v določenem obdobju
     
     
-3. TABELA - podatki o razvezah 
+3. TABELA - podatki o razvezah - 'tabela3'
     - 'leto' - spremenljivka: leto v času meritve, v obdobju med 1990 - 2017
     - 'trajanje zakonske zveze po razredih' - spremenljivka: število ločitev pri določenem trajanju zveze
     - 'otroci ali brez otrok' - spremenljivka: ali so zakonci pri ločitvi že imeli otroke ali ne - število takih z otroki in število brez njih
@@ -137,15 +137,14 @@ print(otroki)
 
 
 
+#Zemljevid Slovenije po regijah.
 
+```{r vizualizacija, echo=FALSE, fig.align='left'}
+source("vizualizacija/mojavizualizacija.R")
+```
 
+Zemljevid Slovenije - obarvanost glede na število porok po slovenskih regijah
 
-
-
-
-
-
-
-
-
-
+```{r zemljevid, echo=FALSE, message=FALSE, fig.align='center'}
+print(zemljevid)
+```

@@ -4,7 +4,6 @@ library(dplyr)
 library(plotrix)
 library(plotly)
 
-source("uvoz/mojuvoz.R")
 
 
 #=================================================================================================================================================
@@ -15,40 +14,25 @@ povpr.starost <- ggplot(tabela1A %>% filter(Spremenljivka %in% c("Povprecna.star
 
 #==================================================================================================================================================
 #2. POROKE PO REGIJAH
-#ZEMLJEVID
-#source('lib/uvozi.zemljevid.r')
-
-# jočem - ne dela
 
 Slovenija <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
-                             "SVN_adm1", encoding = "Windows-1250") %>% fortify()
+                             "SVN_adm1", encoding = "UTF-8") %>% fortify()
 
 graf.slovenija <- ggplot(Slovenija, aes(x=long, y=lat, group=group, fill=NAME_1)) + geom_polygon() +
   labs(title="Slovenija po regijah") + theme(legend.position="none")
 
-#1. poskus
-# levels(graf.slovenija$OB_UIME) <- levels(graf.slovenija$OB_UIME) %>%
-# { gsub("Slovenskih", "Slov.", .) } %>% { gsub("-", " - ", .) }
-# graf.slovenija$OB_UIME <- factor(graf.slovenija$OB_UIME, levels=levels(poroceni$stevilo))
-# graf.slovenija <- fortify(graf.slovenija)
 
-#2. poskus
-# levels(graf.slovenija$NAME_1)[levels(graf.slovenija$NAME_1) %in%
-#                            c("Notranjsko-kraška",
-#                              "Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- c("Primorsko-notranjska",                                                                                                                                                                                      "Posavska", "Koroska", "Goriska", "Obalno-kraska")
-# 
-# povprecje <- poroceni %>% group_by(regija) %>% summarise(poroke = mean(stevilo))
-# print(povprecje)
-# 
-# 
-# zemljevid.poroke <- ggplot() + geom_polygon(data = povprecje %>% right_join(zemljevid, by = c("regija" = "NAME_1")),
-#                aes(x = long, y = lat, group = group, fill = poroke))+
-#   xlab("") + ylab("") + ggtitle("Število porok po slovenskih regijah")
-# 
-# 
-# zemljevid.poroke + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab",
-#                                        na.value = "grey50", guide = "colourbar")
+levels(Slovenija$NAME_1)[levels(Slovenija$NAME_1) %in%
+                           c("Notranjsko-kraška", "Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- 
+                           c("Primorsko-notranjska", "Posavska", "Koroska", "Goriska", "Obalno-kraska")   
 
+poroke <- poroceni[, names(poroceni), drop = F] 
+povprecje <- poroke %>% group_by(regija) %>% summarise(poroke = mean(stevilo))
+
+zemljevid <- ggplot() + geom_polygon(data = povprecje %>% right_join(Slovenija, by = c(povprecje$regija = "NAME_1")),
+               aes(x = long, y = lat, group = group, fill = poroceni)) +
+               ggtitle("Število porok po slovenskih regijah")
+ 
 #==================================================================================================================================================
 #3.TRAJANJE ZAKONSKE ZVEZE DO RAZVEZE
 
@@ -66,11 +50,10 @@ trajanje.zveze <- tabela3 %>%  filter(spremenljivka %in% c("Manj.kot.1.leto", "O
 
 trajanje.z <- tabela3 %>% group_by(spremenljivka) %>% summarise(sestevek=(sum(vrednost)/27))
 trajanje.z <- head(trajanje.z, -2)
-trajanje.z <- ggplot(trajanje.z, aes(x = spremenljivka, y = sestevek, fill = spremenljivka))+
+trajanje.z <- ggplot(trajanje.z, aes(x = factor(1), y = sestevek, fill = spremenljivka)) + xlab("") + ylab("") +
   geom_bar(width = 1, stat = "identity")
 trajanje.z <- trajanje.z + coord_polar("y", start=0)
-
-#ZELO JE GRD, ZIHR JE KKŠNA LEPŠA MOŽNOST
+print(trajanje.z)
 
 #==================================================================================================================================================
 #4. PRIMERJAVA ŠTEVILA ISTOSPOLNIH POROK MED ŽENSKAMI IN MED MOŠKIMI V LETIH 2007 - 2017
