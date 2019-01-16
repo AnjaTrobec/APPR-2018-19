@@ -7,6 +7,7 @@ library(plotly)
 source("uvoz/mojuvoz.R")
 
 
+#=================================================================================================================================================
 #1. POVPREČNA STAROST PRI VSTOPU V ZAKONSKO ZVEZO
 povpr.starost <- ggplot(tabela1A %>% filter(Spremenljivka %in% c("Povprecna.starost.zenina", "Povprecna.starost.neveste")),
                   aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() + xlab("Leto") + ylab("Število") 
@@ -25,15 +26,28 @@ Slovenija <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm
 graf.slovenija <- ggplot(Slovenija, aes(x=long, y=lat, group=group, fill=NAME_1)) + geom_polygon() +
   labs(title="Slovenija po regijah") + theme(legend.position="none")
 
-
-# levels(zemljevid$OB_UIME) <- levels(zemljevid$OB_UIME) %>%
+#1. poskus
+# levels(graf.slovenija$OB_UIME) <- levels(graf.slovenija$OB_UIME) %>%
 # { gsub("Slovenskih", "Slov.", .) } %>% { gsub("-", " - ", .) }
-# zemljevid$OB_UIME <- factor(zemljevid$OB_UIME, levels=levels(odseljeni.obcine$obcina))
-# zemljevid <- fortify(zemljevid)
+# graf.slovenija$OB_UIME <- factor(graf.slovenija$OB_UIME, levels=levels(poroceni$stevilo))
+# graf.slovenija <- fortify(graf.slovenija)
 
-
-
-
+#2. poskus
+# levels(graf.slovenija$NAME_1)[levels(graf.slovenija$NAME_1) %in%
+#                            c("Notranjsko-kraška",
+#                              "Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- c("Primorsko-notranjska",                                                                                                                                                                                      "Posavska", "Koroska", "Goriska", "Obalno-kraska")
+# 
+# povprecje <- poroceni %>% group_by(regija) %>% summarise(poroke = mean(stevilo))
+# print(povprecje)
+# 
+# 
+# zemljevid.poroke <- ggplot() + geom_polygon(data = povprecje %>% right_join(zemljevid, by = c("regija" = "NAME_1")),
+#                aes(x = long, y = lat, group = group, fill = poroke))+
+#   xlab("") + ylab("") + ggtitle("Število porok po slovenskih regijah")
+# 
+# 
+# zemljevid.poroke + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab",
+#                                        na.value = "grey50", guide = "colourbar")
 
 #==================================================================================================================================================
 #3.TRAJANJE ZAKONSKE ZVEZE DO RAZVEZE
