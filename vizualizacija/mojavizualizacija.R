@@ -17,20 +17,19 @@ povpr.starost <- ggplot(tabela1A %>% filter(Spremenljivka %in% c("Povprecna.star
 #ZEMLJEVID
 #source('lib/uvozi.zemljevid.r')
 
-# Analiza in vizualizacija podatkov
+# jočem - ne dela
 
+Slovenija <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
+                             "SVN_adm1", encoding = "Windows-1250") %>% fortify()
 
-#Slovenija <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
-#                             "SVN_adm1", encoding = "Windows-1250") %>% fortify()
+graf.slovenija <- ggplot(Slovenija, aes(x=long, y=lat, group=group, fill=NAME_1)) + geom_polygon() +
+  labs(title="Slovenija po regijah") + theme(legend.position="none")
+
 
 # levels(zemljevid$OB_UIME) <- levels(zemljevid$OB_UIME) %>%
 # { gsub("Slovenskih", "Slov.", .) } %>% { gsub("-", " - ", .) }
 # zemljevid$OB_UIME <- factor(zemljevid$OB_UIME, levels=levels(odseljeni.obcine$obcina))
 # zemljevid <- fortify(zemljevid)
-# 
-# zemljevid <- ggplot(Slovenija, aes(x=long, y=lat, group=group, fill=NAME_1)) +
-#    geom_polygon() + labs(title="Slovenija po regijah") + theme(legend.position="none")
-
 
 
 
