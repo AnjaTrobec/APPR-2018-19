@@ -42,7 +42,7 @@ source("uvoz/mojuvoz.r")
 Uvozila sem podatke iz Statističnega urada Republike Slovenije.
 Imam 6 tabel - vse v csv obliki.
 
-1. TABELA - podatki o številu skenjenih zvez letno in povprečna starost ob vstopu v zakonsko zvezo
+1. TABELA - podatki o številu skenjenih zvez letno in povprečna starost ob vstopu v zakonsko zvezo 
     - 'leto' - spremenljivka: časovno obdobje med 1991 - 2017
     - 'povprecna starost zenina' - spremenljivka: povprecna starost zenina ob vstopu v zakonsko zvezo
     - 'povprecna starost neveste' - spremenljivka: povprecna starost neveste ob vstopu v zakonsko zvezo
@@ -54,7 +54,7 @@ Imam 6 tabel - vse v csv obliki.
     - 'sestevek' - meritev: povprečno število porok v dotični regiji v določenem obdobju
     
     
-3. TABELA - podatki o razvezah
+3. TABELA - podatki o razvezah 
     - 'leto' - spremenljivka: leto v času meritve, v obdobju med 1990 - 2017
     - 'trajanje zakonske zveze po razredih' - spremenljivka: število ločitev pri določenem trajanju zveze
     - 'otroci ali brez otrok' - spremenljivka: ali so zakonci pri ločitvi že imeli otroke ali ne - število takih z otroki in število brez njih
