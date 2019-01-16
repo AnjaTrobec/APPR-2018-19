@@ -30,7 +30,7 @@ poroke <- poroceni[, names(poroceni), drop = F]
 povprecje <- poroke %>% group_by(regija) %>% summarise(poroke = mean(stevilo))
 
 zemljevid <- ggplot() + geom_polygon(data = povprecje %>% right_join(Slovenija, by = c(povprecje$regija = "NAME_1")),
-               aes(x = long, y = lat, group = group, fill = poroceni)) +
+               aes(x = long, y = lat, group = group, fill = poroceni)) + xlab("") + ylab("") +
                ggtitle("Število porok po slovenskih regijah")
  
 #==================================================================================================================================================
