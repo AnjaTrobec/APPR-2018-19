@@ -25,7 +25,7 @@ tabela1A <- tabela1A %>% melt(value.name = "Vrednost", variable.name = "Spremenl
 #TABELA 2 - podatki o porokah po regijah
 
 poroceni.koroska <- read_csv2("podatki/poroceni-koroska.csv", skip=4, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = "."))
-poroceni.koroska$regija <- c("Koroška")
+poroceni.koroska$regija <- c("Koroska")
 poroceni.gorenjska <- read_csv2("podatki/poroceni-gorenjska.csv", skip=5, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = "."))
 poroceni.gorenjska$regija <- c("Gorenjska")
 poroceni.primorska <- read_csv2("podatki/poroceni-primorska.csv", skip=4, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = "."))
@@ -41,13 +41,14 @@ poroceni.pomurska$regija <- c("Pomurska")
 poroceni.podravska <- read_csv2("podatki/poroceni-podravska.csv", skip=4, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = "."))
 poroceni.podravska$regija <- c("Podravska")
 poroceni.osrednja <- read_csv2("podatki/poroceni-osrednjeslovenska.csv", skip=5, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = "."))
-poroceni.osrednja$regija <- c("Osrednja Slovenija")
+poroceni.osrednja$regija <- c("Osrednjeslovenska")
 poroceni.obala <- read_csv2("podatki/poroceni-obalnokraska.csv", skip=5, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = "."))
-poroceni.obala$regija <- c("Obalno-kraška")
+poroceni.obala$regija <- c("Obalno-kraska")
 poroceni.jugovzhodna <- read_csv2("podatki/poroceni-jugovzhodnaslo.csv", skip=5, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = "."))
 poroceni.jugovzhodna$regija <- c("Jugovzhodna Slovenija")
 poroceni.goriska <- read_csv2("podatki/poroceni-goriska.csv",  skip=5, col_names = c("starostni.tip", paste0("", 2011:2018)), locale = locale(decimal_mark = ",", grouping_mark = "."))
-poroceni.goriska$regija <- c("Goriška")
+poroceni.goriska$regija <- c("Goriska")
+
 poroceni <- rbind(poroceni.koroska, poroceni.gorenjska, poroceni.primorska, poroceni.zasavska, poroceni.savinjska, poroceni.pomurska, poroceni.posavska,
                   poroceni.osrednja, poroceni.goriska, poroceni.obala, poroceni.jugovzhodna, poroceni.podravska) %>%
   

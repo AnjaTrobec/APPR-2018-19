@@ -21,18 +21,17 @@ Slovenija <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm
 graf.slovenija <- ggplot(Slovenija, aes(x=long, y=lat, group=group, fill=NAME_1)) + geom_polygon() +
   labs(title="Slovenija po regijah") + theme(legend.position="none")
 
-
 levels(Slovenija$NAME_1)[levels(Slovenija$NAME_1) %in%
-                           c("Notranjsko-kraška", "Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- 
-                           c("Primorsko-notranjska", "Posavska", "Koroska", "Goriska", "Obalno-kraska")   
+                           c("Notranjsko-kraška",
+                             "Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- c("Primorska","Posavska", "Koroska", "Goriska", "Obalno-kraska")
 
 poroke <- poroceni[, names(poroceni), drop = F] 
 povprecje <- poroke %>% group_by(regija) %>% summarise(poroke = mean(stevilo))
 
-zemljevid <- ggplot() + geom_polygon(data = povprecje %>% right_join(Slovenija, by = c(povprecje$regija = "NAME_1")),
-               aes(x = long, y = lat, group = group, fill = poroceni)) + xlab("") + ylab("") +
+zemljevid <- ggplot() + geom_polygon(data = povprecje %>% right_join(Slovenija, by = c("regija" = "NAME_1")),
+               aes(x = long, y = lat, group = group, fill = poroke)) + xlab("") + ylab("") +
                ggtitle("Število porok po slovenskih regijah")
- 
+
 #==================================================================================================================================================
 #3.TRAJANJE ZAKONSKE ZVEZE DO RAZVEZE
 
@@ -53,7 +52,7 @@ trajanje.z <- head(trajanje.z, -2)
 trajanje.z <- ggplot(trajanje.z, aes(x = factor(1), y = sestevek, fill = spremenljivka)) + xlab("") + ylab("") +
   geom_bar(width = 1, stat = "identity")
 trajanje.z <- trajanje.z + coord_polar("y", start=0)
-print(trajanje.z)
+
 
 #==================================================================================================================================================
 #4. PRIMERJAVA ŠTEVILA ISTOSPOLNIH POROK MED ŽENSKAMI IN MED MOŠKIMI V LETIH 2007 - 2017
@@ -61,7 +60,7 @@ print(trajanje.z)
 istospolne <- ggplot(data=tabela4, aes(x=leto, y=stevilo, fill=spol)) +
   geom_bar(stat="identity", position=position_dodge()) + ggtitle("Istospolne poroke")
 
-
+print(istospolne)
 
 #==================================================================================================================================================
 #5. STAROST PRI RAZVEZI

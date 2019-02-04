@@ -137,14 +137,11 @@ print(otroki)
 
 
 
-#Zemljevid Slovenije po regijah.
-
-```{r vizualizacija, echo=FALSE, fig.align='left'}
+Zemljevid Slovenije po regijah.
+```{r zemljevid, echo=FALSE, fig.align='left', error=FALSE, warning=FALSE}
 source("vizualizacija/mojavizualizacija.R")
+print(zemljevid)
 ```
 
 Zemljevid Slovenije - obarvanost glede na število porok po slovenskih regijah
 
-```{r zemljevid, echo=FALSE, message=FALSE, fig.align='center'}
-print(zemljevid)
-```
