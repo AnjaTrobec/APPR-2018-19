@@ -1,3 +1,4 @@
+#3. faza - VIZUALIZACIJA
 
 library(ggplot2)
 library(dplyr)
@@ -6,13 +7,13 @@ library(plotly)
 
 
 
-#=================================================================================================================================================
+#=========================================================================================================================================================================================
 #1. POVPREČNA STAROST PRI VSTOPU V ZAKONSKO ZVEZO
 povpr.starost <- ggplot(tabela1A %>% filter(Spremenljivka %in% c("Povprecna.starost.zenina", "Povprecna.starost.neveste")),
                   aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() + xlab("Leto") + ylab("Število") 
 
 
-#==================================================================================================================================================
+#=========================================================================================================================================================================================
 #2. POROKE PO REGIJAH
 
 Slovenija <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
@@ -31,7 +32,10 @@ zemljevid <- ggplot() + geom_polygon(data = povprecje %>% right_join(Slovenija, 
                aes(x = long, y = lat, group = group, fill = poroke)) + xlab("") + ylab("") +
                ggtitle("Število porok po slovenskih regijah")
 
-#==================================================================================================================================================
+zemljevid + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab",
+                                       na.value = "grey50", guide = "colourbar")
+
+#=========================================================================================================================================================================================
 #3.TRAJANJE ZAKONSKE ZVEZE DO RAZVEZE
 
 #TRAJANJE ZAKONSKE ZVEZE (ČRTNI DIAGRAM - KAKO ODSTRANIM RAZVEZE Z OTROKI IN BREZ?)
@@ -52,22 +56,20 @@ trajanje.z <- ggplot(trajanje.z, aes(x = factor(1), y = sestevek, fill = spremen
   geom_bar(width = 1, stat = "identity")
 trajanje.z <- trajanje.z + coord_polar("y", start=0)
 
-
-#==================================================================================================================================================
+#=========================================================================================================================================================================================
 #4. PRIMERJAVA ŠTEVILA ISTOSPOLNIH POROK MED ŽENSKAMI IN MED MOŠKIMI V LETIH 2007 - 2017
 
 istospolne <- ggplot(data=tabela4, aes(x=leto, y=stevilo, fill=spol)) +
   geom_bar(stat="identity", position=position_dodge()) + ggtitle("Istospolne poroke")
 
-
-#==================================================================================================================================================
+#=========================================================================================================================================================================================
 #5. STAROST PRI RAZVEZI
 
 starost <- ggplot(data=tabela5, aes(x=Leto, y=Stevilo, fill=starost.pri.razvezi)) +
   geom_bar(stat="identity", position=position_dodge()) + ggtitle("Starost pri razvezi")
 
 
-#==================================================================================================================================================
+#=========================================================================================================================================================================================
 #6. razveze z otroki in brez otrok, graf po letih
 otroki <- ggplot(tabela3 %>% filter(spremenljivka %in% c("Razveze.z.otroki", "Razveze.brez.otrok")),
   aes(x = leto, y = vrednost, color = spremenljivka)) + geom_line() +
@@ -78,5 +80,5 @@ otroki <- ggplot(tabela3 %>% filter(spremenljivka %in% c("Razveze.z.otroki", "Ra
                                   "Razveze.brez.otrok"),
                        labels = c("Razveze.z.otroki", "Razveze.brez.otrok"))
 
-#==================================================================================================================================================
+#=========================================================================================================================================================================================
 

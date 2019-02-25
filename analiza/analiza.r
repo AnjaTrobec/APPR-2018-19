@@ -1,14 +1,17 @@
 # 4. faza: Analiza podatkov
 
-# osnovni.podatki <- tabela4
-# print(osnovni.podatki)
-# ociscena <- subset(osnovni.podatki, spremenljivka = stevilo)
-# fit <- lm(data = ociscena, vrednost = leto)
-# a <- data.frame(leto=seq(2016, 2030, 2))
-# predict(fit, a)
-# napoved <- a %>% mutate(vrednost=predict(fit, .))
-# graf5 <- ggplot(ociscena, aes(x=leto, y=stevilo)) +
-#   geom_smooth(method=lm, se=FALSE, fullrange = TRUE) +
-#   geom_point(data=napoved, aes(x=leto, y=stevilo), color="orange", size=3) +
-#   labs(title="Napoved števila istospolnih porok", y="Število porok") + geom_point()
+nova <- subset(tabela1A, Spremenljivka == "Stevilo.sklenjenih.zakonskih.zvez")
+
+fit <- lm(data = nova, Vrednost ~ Leto)
+
+casovno <- data.frame(Leto=seq(1998, 2030, 2))
+
+predict(fit, casovno)
+
+napoved <- casovno %>% mutate(Vrednost=predict(fit, .))
+
+graf5 <- ggplot(nova, aes(x=Leto, y=Vrednost)) +
+  geom_smooth(method=lm, se=FALSE, fullrange = TRUE) +
+  geom_point(data=nova, aes(x=Leto, y=Vrednost), color="orange", size=3) +
+  labs(title="Napoved števila porok", y="Število porok") + geom_point()
 

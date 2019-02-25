@@ -136,12 +136,20 @@ print(otroki)
 ```
 
 
-
-Zemljevid Slovenije po regijah.
-```{r zemljevid, echo=FALSE, fig.align='left', error=FALSE, warning=FALSE}
+ ***
+# Zemljevid Slovenije po regijah
+```{r zemljevid, echo=FALSE, fig.align='left', warning=FALSE, error=FALSE, message=FALSE}
 source("vizualizacija/mojavizualizacija.R", encoding="UTF-8")
 print(zemljevid)
 ```
 
 Zemljevid Slovenije - obarvanost glede na število porok po slovenskih regijah
 
+***
+# Napredna analiza podatkov
+
+```{r analiza, echo=FALSE, message=FALSE}
+source("analiza/analiza.r", encoding="UTF-8")
+print(graf5)
+```
+Zgornji graf prikazuje napoved o številu porok med letoma 1998 - 2030. Kot vidimo število porok občutno pada, kar potrdi mojo hipotezo. Ljudje se poročajo vedno kasneje in število porok pada.
