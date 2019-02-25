@@ -143,7 +143,7 @@ source("vizualizacija/mojavizualizacija.R", encoding="UTF-8")
 print(zemljevid)
 ```
 
-Zemljevid Slovenije - obarvanost glede na število porok po slovenskih regijah
+Zemljevid Slovenije - obarvanost glede na število porok po slovenskih regijah.
 
 ***
 # Napredna analiza podatkov
