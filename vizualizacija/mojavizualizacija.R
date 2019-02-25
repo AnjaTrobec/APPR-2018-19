@@ -22,8 +22,7 @@ graf.slovenija <- ggplot(Slovenija, aes(x=long, y=lat, group=group, fill=NAME_1)
   labs(title="Slovenija po regijah") + theme(legend.position="none")
 
 levels(Slovenija$NAME_1)[levels(Slovenija$NAME_1) %in%
-                           c("Notranjsko-kraška",
-                             "Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- c("Primorska","Posavska", "Koroska", "Goriska", "Obalno-kraska")
+                           c("Notranjsko-kraška", "Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- c("Primorska","Posavska", "Koroska", "Goriska", "Obalno-kraska")
 
 poroke <- poroceni[, names(poroceni), drop = F] 
 povprecje <- poroke %>% group_by(regija) %>% summarise(poroke = mean(stevilo))
@@ -60,7 +59,6 @@ trajanje.z <- trajanje.z + coord_polar("y", start=0)
 istospolne <- ggplot(data=tabela4, aes(x=leto, y=stevilo, fill=spol)) +
   geom_bar(stat="identity", position=position_dodge()) + ggtitle("Istospolne poroke")
 
-print(istospolne)
 
 #==================================================================================================================================================
 #5. STAROST PRI RAZVEZI
@@ -81,3 +79,4 @@ otroki <- ggplot(tabela3 %>% filter(spremenljivka %in% c("Razveze.z.otroki", "Ra
                        labels = c("Razveze.z.otroki", "Razveze.brez.otrok"))
 
 #==================================================================================================================================================
+

@@ -36,7 +36,7 @@ Analizirala bom podatke o številu porok po letih, o povprečni starosti ob vsto
 
 ```{r uvoz, echo=FALSE, message=FALSE}
 
-source("uvoz/mojuvoz.R")
+source("uvoz/mojuvoz.R", encoding="UTF-8")
 ```
 
 Uvozila sem podatke iz Statističnega urada Republike Slovenije.
@@ -90,7 +90,7 @@ Imam 6 tabel - vse v csv obliki.
 # Analiza in vizualizacija podatkov
 
 ```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
-source("vizualizacija/mojavizualizacija.R")
+source("vizualizacija/mojavizualizacija.R", encoding="UTF-8")
 ```
 
 Cilj moje naloge je bil pokazati, da število razvez z leti narašča in to da se ljudje poročajo kasneje. Potrditev teh dveh hipotez lahko najdemo na spodnjih grafih.
@@ -139,7 +139,7 @@ print(otroki)
 
 Zemljevid Slovenije po regijah.
 ```{r zemljevid, echo=FALSE, fig.align='left', error=FALSE, warning=FALSE}
-source("vizualizacija/mojavizualizacija.R")
+source("vizualizacija/mojavizualizacija.R", encoding="UTF-8")
 print(zemljevid)
 ```
 
