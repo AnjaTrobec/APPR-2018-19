@@ -25,7 +25,7 @@ graf.slovenija <- ggplot(Slovenija, aes(x=long, y=lat, group=group, fill=NAME_1)
 levels(Slovenija$NAME_1)[levels(Slovenija$NAME_1) %in%
                            c("Notranjsko-kraška", "Spodnjeposavska", "Koroška", "Goriška", "Obalno-kraška")] <- c("Primorska","Posavska", "Koroska", "Goriska", "Obalno-kraska")
 
-poroke <- poroceni[, names(poroceni), drop = F] 
+poroke <- poroceni[, names(poroceni), drop = F]
 povprecje <- poroke %>% group_by(regija) %>% summarise(poroke = mean(stevilo))
 
 zemljevid <- ggplot() + geom_polygon(data = povprecje %>% right_join(Slovenija, by = c("regija" = "NAME_1")),
@@ -34,6 +34,7 @@ zemljevid <- ggplot() + geom_polygon(data = povprecje %>% right_join(Slovenija, 
 
 zemljevid + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab",
                                        na.value = "grey50", guide = "colourbar")
+
 
 #=========================================================================================================================================================================================
 #3.TRAJANJE ZAKONSKE ZVEZE DO RAZVEZE
