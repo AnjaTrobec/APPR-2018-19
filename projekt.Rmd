@@ -155,6 +155,6 @@ print(graf5)
 ```
 Zgornji graf prikazuje napoved o številu porok med letoma 1998 - 2030. Kot vidimo število porok občutno pada, kar potrdi mojo hipotezo. Ljudje se poročajo vedno kasneje in število porok pada.
 
-```{r shiny, echo=FALSE}
+```{r shiny, echo=FALSE, warning=FALSE, fig.align='center'}
 shinyAppDir("shiny", options=list(width="100%", height=600))
 ```
