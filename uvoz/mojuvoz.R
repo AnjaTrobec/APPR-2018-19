@@ -59,8 +59,8 @@ poroceni <- rbind(poroceni.koroska, poroceni.gorenjska, poroceni.primorska, poro
 #TABELA 3 - podatki o razvezah
 tabela3 <- read.csv2("podatki/razveze-z-otroci-ali-brezbrez-trajanje-zveze.csv", skip=3, dec = ".") 
 colnames(tabela3) <- c("Leto","Manj.kot.1.leto","Od.1-4.leta","Od.5-9.let", "Od.10-14.let", "15.ali.vec","Razveze.z.otroki","Razveze.brez.otrok")
-tabela3 <- tabela3 %>% melt(value.name = "vrednost", variable.name = "spremenljivka", id.vars = 1)
-colnames(tabela3)[1] <- "leto"
+tabela3 <- tabela3 %>% melt(value.name = "Vrednost", variable.name = "Spremenljivka", id.vars = 1)
+colnames(tabela3)[1] <- "Leto"
 
 
 #=========================================================================================================================================================================================================================================================================================

@@ -94,10 +94,10 @@ Imam 6 tabel - vse v csv obliki.
 source("vizualizacija/mojavizualizacija.R", encoding="UTF-8")
 ```
 
-Cilj moje naloge je bil pokazati, da število razvez z leti narašča in to da se ljudje poročajo kasneje. Potrditev teh dveh hipotez lahko najdemo na spodnjih grafih.
+Cilj moje naloge je bil pokazati, da število razvez z leti narašča in da se ljudje poročajo kasneje. Potrditev teh dveh hipotez lahko najdemo na spodnjih grafih.
 
 
-Spodnji krivulji prikazujeta povprečno starost ženina in neveste ob sklenitvi zakonske zveze. Opazovano obdobje je od leta 1990 pa vse do danes. Kot vidimo, se ljudje poročajo vedno kasneje.
+Spodnji krivulji prikazujeta povprečno starost ženina in neveste ob sklenitvi zakonske zveze. Opazovano obdobje je od leta 1990 pa vse do danes. Kot vidimo, se ljudje poročajo vedno kasneje. 
 
 ```{r povpr.starost, echo=FALSE, message=FALSE, fig.align='center'}
 print(povpr.starost)
@@ -153,8 +153,11 @@ Zemljevid Slovenije - obarvanost glede na število porok po slovenskih regijah.
 source("analiza/analiza.r", encoding="UTF-8")
 print(graf5)
 ```
-Zgornji graf prikazuje napoved o številu porok med letoma 1998 - 2030. Kot vidimo število porok občutno pada, kar potrdi mojo hipotezo. Ljudje se poročajo vedno kasneje in število porok pada.
+
+Zgornji graf prikazuje napoved o številu porok med letoma 1998 - 2030. Kot vidimo število porok občutno pada, kar potrdi mojo hipotezo. 
+Ljudje se poročajo vedno kasneje in število porok pada.
 
 ```{r shiny, echo=FALSE, warning=FALSE, fig.align='center'}
 shinyAppDir("shiny", options=list(width="100%", height=600))
 ```
+
