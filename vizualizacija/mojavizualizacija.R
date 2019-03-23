@@ -66,9 +66,10 @@ istospolne <- ggplot(data=tabela4, aes(x=leto, y=stevilo, fill=spol)) +
 #=========================================================================================================================================================================================
 #5. STAROST PRI RAZVEZI
 
-starost <- ggplot(data=tabela5, aes(x=Leto, y=Stevilo, fill=starost.pri.razvezi)) +
+starost <- ggplot(data=tabela5, aes(x=Leto, y=Stevilo, fill=Starost_pri_razvezi)) +
   geom_bar(stat="identity", position=position_dodge()) + ggtitle("Starost pri razvezi") + xlab("Leto") + ylab("Število")
 
+print(starost)
 #=========================================================================================================================================================================================
 #6. razveze z otroki in brez otrok, graf po letih
 otroki <- ggplot(tabela3 %>% filter(Spremenljivka %in% c("Razveze.z.otroki", "Razveze.brez.otrok")),

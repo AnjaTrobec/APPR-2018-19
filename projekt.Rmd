@@ -139,8 +139,7 @@ print(otroki)
 
  ***
 # Zemljevid Slovenije po regijah
-```{r zemljevid, echo=FALSE, fig.align='left', warning=FALSE, error=FALSE, message=FALSE}
-source("vizualizacija/mojavizualizacija.R", encoding="UTF-8")
+```{r zemljevid, echo=FALSE, fig.align='left', warning=FALSE, error=FALSE, message=FALSE, results='hide'}
 print(zemljevid)
 ```
 

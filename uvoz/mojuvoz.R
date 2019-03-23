@@ -71,8 +71,8 @@ colnames(tabela4) <- c("leto", "spol", "stevilo")
 
 #=========================================================================================================================================================================================================================================================================================
 #TABELA 5 - razvezani po starostnih skupinah
-tabela5 <- read_csv2("podatki/razvezani-starost.csv", skip=4, col_names = c("starost.pri.razvezi", paste0("", 2011:2018)),  locale = locale(decimal_mark = ",", grouping_mark = ".")) %>% 
-                      melt(id.vars = "starost.pri.razvezi", variable.name = "Leto", value.name = "Stevilo")
+tabela5 <- read_csv2("podatki/razvezani-starost.csv", skip=4, col_names = c("Starost_pri_razvezi", paste0("", 2011:2018)),  locale = locale(decimal_mark = ",", grouping_mark = ".")) %>% 
+                      melt(id.vars = "Starost_pri_razvezi", variable.name = "Leto", value.name = "Stevilo")
 
 
 #=========================================================================================================================================================================================================================================================================================
