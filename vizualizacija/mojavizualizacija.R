@@ -75,7 +75,6 @@ starost <- ggplot(data=tabela5, aes(x=Leto, y=Stevilo, fill=starost.pri.razvezi)
 otroki <- ggplot(tabela3 %>% filter(Spremenljivka %in% c("Razveze.z.otroki", "Razveze.brez.otrok")),
   aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() +
   xlab("Leto") + ylab("Število") + ggtitle("Razveze z otroki ali brez njih") + 
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
   scale_color_discrete(name = "Legenda",
                        breaks = c("Razveze.z.otroki",
                                   "Razveze.brez.otrok"),
