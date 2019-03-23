@@ -10,7 +10,7 @@ library(plotly)
 #=========================================================================================================================================================================================
 #1. POVPREČNA STAROST PRI VSTOPU V ZAKONSKO ZVEZO
 povpr.starost <- ggplot(tabela1A %>% filter(Spremenljivka %in% c("Povprecna.starost.zenina", "Povprecna.starost.neveste")),
-                  aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() + xlab("Leto") + ylab("Število porok") 
+                  aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() + ggtitle("Povprečna starost ob vstopu v zakonsko zvezo") + xlab("Leto") + ylab("Število porok") 
 
 
 #=========================================================================================================================================================================================
@@ -41,8 +41,8 @@ zemljevid + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab"
 
 #TRAJANJE ZAKONSKE ZVEZE (ČRTNI DIAGRAM - KAKO ODSTRANIM RAZVEZE Z OTROKI IN BREZ?)
 trajanje <- ggplot(tabela3 %>% filter(Spremenljivka %in% c("Manj.kot.1.leto", "Od.1-4.leta", "Od.5-9.let", "Od.10-14.let", "15.ali.vec")),
-  aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() + xlab("Leto") + ylab("Število") 
-  scale_color_discrete(name = "Trajanje zakonske zveze",
+  aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() + ggtitle("Trajanje zakonske zveze do ločitve") + xlab("Leto") + ylab("Število") 
+  scale_color_discrete(name = "Časovno trajanje",
                        breaks = c("Trajanje zakonske zveze manj kot 1 leto", "Trajanje zakonske zveze 1-4 leta","Trajanje zakonske zveze 5-9 let","Trajanje zakonske zveze 10-14 let", "Trajanje zakonske zveze 15 let ali vec"),
                        labels = c("Pod 1 leto", "1-4 leta", "5-9 let", "10-14 let", "15 let ali več"))
 
@@ -61,15 +61,15 @@ trajanje.z <- trajanje.z + coord_polar("y", start=0)
 #4. PRIMERJAVA ŠTEVILA ISTOSPOLNIH POROK MED ŽENSKAMI IN MED MOŠKIMI V LETIH 2007 - 2017
 
 istospolne <- ggplot(data=tabela4, aes(x=leto, y=stevilo, fill=spol)) +
-  geom_bar(stat="identity", position=position_dodge()) + ggtitle("Istospolne poroke") + xlab("Leto") + ylab("Število")
+  geom_bar(stat="identity", position=position_dodge()) + ggtitle("Istospolne poroke") + xlab("Leto") + ylab("Število") + labs(fill='Spol')
 
 #=========================================================================================================================================================================================
 #5. STAROST PRI RAZVEZI
 
-starost <- ggplot(data=tabela5, aes(x=Leto, y=Stevilo, fill=Starost_pri_razvezi)) +
-  geom_bar(stat="identity", position=position_dodge()) + ggtitle("Starost pri razvezi") + xlab("Leto") + ylab("Število")
+starost <- ggplot(data=tabela5, aes(x=Leto, y=Stevilo, fill=starost.pri.razvezi)) +
+  geom_bar(stat="identity") + ggtitle("Starost pri razvezi") + xlab("Leto") + ylab("Število") + labs(fill='Starost')
 
-print(starost)
+
 #=========================================================================================================================================================================================
 #6. razveze z otroki in brez otrok, graf po letih
 otroki <- ggplot(tabela3 %>% filter(Spremenljivka %in% c("Razveze.z.otroki", "Razveze.brez.otrok")),
