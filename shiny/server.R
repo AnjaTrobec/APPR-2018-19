@@ -5,7 +5,7 @@ function(input, output) {
     tabela__1 <- poroceni %>% filter(regija == input$regija)
 
     print(ggplot(data=tabela__1, aes(x = leto, y = stevilo), group=1) + geom_bar(colour="black", stat="identity") +
-            ylab("Poroke") + xlab("Leto") + ggtitle("Poroke po regijah"))
+            ylab("Število porok") + xlab("Leto"))
   }) 
 }
 

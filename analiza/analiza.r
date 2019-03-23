@@ -15,5 +15,4 @@ graf5 <- ggplot(napoved, aes(x=Leto, y=Vrednost)) +
   geom_point(data=zakonske, aes(x=Leto, y=Vrednost), color="red", size=4) +
   labs(title="Napoved števila porok", y="Število porok") + geom_point()
 
-print(graf5)
 

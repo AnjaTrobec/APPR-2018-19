@@ -49,28 +49,34 @@ Imam 6 tabel - vse v csv obliki.
     - 'povprecna starost neveste' - spremenljivka: povprecna starost neveste ob vstopu v zakonsko zvezo
     - 'stevilo sklenjenih zvez' - spremenljivka: stevilo sklenjenih zakonskih zvez v določenem obdobju
 
+\newline
 
 2. TABELA - podatki o porokah po regijah 
     - 'regija' - spremenljivka: poroke glede na regije
     - 'sestevek' - meritev: povprečno število porok v dotični regiji v določenem obdobju
     
+\newline    
     
 3. TABELA - podatki o razvezah - 'tabela3'
     - 'leto' - spremenljivka: leto v času meritve, v obdobju med 1990 - 2017
     - 'trajanje zakonske zveze po razredih' - spremenljivka: število ločitev pri določenem trajanju zveze
     - 'otroci ali brez otrok' - spremenljivka: ali so zakonci pri ločitvi že imeli otroke ali ne - število takih z otroki in število brez njih
     
+ \newline   
     
 4. TABELA - podatki o porokah med istospolnimi partnerji 
     - 'leto' - spremenljivka: leto v času meritve, v obdobju med 2007 - 2017
     - 'spol' - spremenljivka: moške ali ženske istospolne poroke
     - 'stevilo' - meritev: število porok med določenim spolom v določenem letu
     
+ \newline   
     
 5. TABELA - razvezani po starostnih skupinah
     - 'starost pri razvezi' - spremenljivka: razvezani glede na starost
     - 'leto' - spremenljivka: leto v času meritve, v obdobju med 2011 - 2018
     - 'stevilo' - meritev: število razvezanih v določenem letu
+
+\newline    
     
     
 6. TABELA - vdoveli
@@ -78,6 +84,7 @@ Imam 6 tabel - vse v csv obliki.
     - 'leto' - spremenljivka: leto v času meritve, v obdobju med 2011 - 2018
     - 'stevilo' - meritev: število vdovelih
 
+\newline
 
 <!-- Spodnji graf prikazuje porazdelitev števila naselij v občinah. -->
 
@@ -97,7 +104,7 @@ source("vizualizacija/mojavizualizacija.R", encoding="UTF-8")
 Cilj moje naloge je bil pokazati, da število razvez z leti narašča in da se ljudje poročajo kasneje. Potrditev teh dveh hipotez lahko najdemo na spodnjih grafih.
 
 
-Spodnji krivulji prikazujeta povprečno starost ženina in neveste ob sklenitvi zakonske zveze. Opazovano obdobje je od leta 1990 pa vse do danes. Kot vidimo, se ljudje poročajo vedno kasneje. 
+Spodnji krivulji prikazujeta povprečno starost ženina in neveste ob sklenitvi zakonske zveze. Opazovano obdobje je od leta 1990 pa vse do danes. Kot vidimo, se ljudje poročajo vedno kasneje. Razlogi za to so najverjetneje podaljšano šolanje, kasnejše zaposlovanje in tudi daljša življenjska doba.
 
 ```{r povpr.starost, echo=FALSE, message=FALSE, fig.align='center'}
 print(povpr.starost)
@@ -105,7 +112,9 @@ print(povpr.starost)
 
 
 Spodnja 2 grafa prikazujeta povprečno trajanje zakonske zveze do ločitve. 
-Situacijo sem želela predstaviti v dveh oblikah, da še procentualno vidimo kaj pomenijo te številke.
+Situacijo sem želela predstaviti v dveh oblikah, da še procentualno vidimo kaj pomenijo te številke. 
+\newline
+Izkaže se, da se skoraj polovica zvez konča po več kot 15-ih letih in presenetljivo se vsako leto pojavljajo tudi taki, ki se ločijo po manj kot enem letu.
 
 ```{r trajanje, echo=FALSE, message=FALSE, fig.align='center'}
 print(trajanje)
@@ -116,13 +125,15 @@ print(trajanje.z)
 ```
 
 
-Preučila sem tudi podatke o istospolnih porokah med moškimi in med ženskami v Sloveniji.
+Preučila sem tudi podatke o istospolnih porokah med moškimi pari in med ženskimi pari v Sloveniji.
 Spodnji graf prikazuje število istospolnih porok med letoma 2007 - 2017.
+\newline
+Opazimo, da številke kar hitro naraščajo. Razlog za to so predvsem spremembe v moderni družbi (manj diskriminacije, bolj odprti ljudje, ...).
+
 
 ```{r istospolne, echo=FALSE, message=FALSE, fig.align='center'}
 print(istospolne)
 ```
-
 
 Razveze sem analizirala po starostnih skupinah od leta 2011 - 2017. Ugotovila sem, da so razveze najbolj pogoste med petdesetim in šestdesetim letom.
 
@@ -130,7 +141,7 @@ Razveze sem analizirala po starostnih skupinah od leta 2011 - 2017. Ugotovila se
 print(starost)
 ```
 
-Pri razvezah pa me je zanimalo še, ali sta partnerja starša ali ne. Spodnji graf prikazuje število ločitev pri katerih so partnerji starši otrok in ločitve pri katerih partnerji nimajo otrok.
+Pri razvezah pa me je zanimalo še, ali sta partnerja starša ali ne. Spodnji graf prikazuje število ločitev pri katerih so partnerji starši otrok in ločitve pri katerih partnerji nimajo otrok. Izkaže se da nažalost večina razvez vključuje otroke.
 
 ```{r otroki, echo=FALSE, message=FALSE, fig.align='center'}
 print(otroki)
@@ -161,6 +172,10 @@ Ljudje se poročajo vedno kasneje in število porok pada.
 Za zaključek sem naredila še aplikacijo v Shiny-ju, pri kateri pri ustrezni izbiri regije dobimo podatke o številu porok od leta 2011 - 2018.
 
 ```{r shiny, echo=FALSE, warning=FALSE, fig.align='center'}
-shinyAppDir("shiny", options=list(width="100%", height=600))
+shinyAppDir("shiny", options=list(width="100%", height=250000))
 ```
 
+
+# Zaključek
+
+Delo v R-u je bil zame izziv, ampak mi je delo olajšala zanimiva tema. Potrdila sem svoje hipoteze in dodatno ugotovila, da je ločitev veliko več kot bi si želeli in da so nažalost v večini primerov žrtve teh tudi otroci. Najbolj zabaven del naloge pa je bil izdelovanje aplikacije Shiny, ki je bil hkrati tudi največji izziv.

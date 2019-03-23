@@ -39,7 +39,7 @@ zemljevid + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab"
 #=========================================================================================================================================================================================
 #3.TRAJANJE ZAKONSKE ZVEZE DO RAZVEZE
 
-#TRAJANJE ZAKONSKE ZVEZE (ČRTNI DIAGRAM - KAKO ODSTRANIM RAZVEZE Z OTROKI IN BREZ?)
+#TRAJANJE ZAKONSKE ZVEZE
 trajanje <- ggplot(tabela3 %>% filter(Spremenljivka %in% c("Manj.kot.1.leto", "Od.1-4.leta", "Od.5-9.let", "Od.10-14.let", "15.ali.vec")),
   aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() + ggtitle("Trajanje zakonske zveze do ločitve") + xlab("Leto") + ylab("Število") 
   scale_color_discrete(name = "Časovno trajanje",
