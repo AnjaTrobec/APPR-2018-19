@@ -62,7 +62,6 @@ colnames(tabela3) <- c("Leto","Manj.kot.1.leto","Od.1-4.leta","Od.5-9.let", "Od.
 tabela3 <- tabela3 %>% melt(value.name = "Vrednost", variable.name = "Spremenljivka", id.vars = 1)
 colnames(tabela3)[1] <- "Leto"
 
-
 #=========================================================================================================================================================================================================================================================================================
 #TABELA 4 - podatki o porokah med istospolnimi partnerji
 tabela4 <- read.csv2("podatki/zveze-sklenjene-med-istospolnimi-partnerji.csv", skip=3)
