@@ -90,7 +90,7 @@ Imam 6 tabel - vse v csv obliki.
 
 # Analiza in vizualizacija podatkov
 
-```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide', fig.align='center'}
 source("vizualizacija/mojavizualizacija.R", encoding="UTF-8")
 ```
 
