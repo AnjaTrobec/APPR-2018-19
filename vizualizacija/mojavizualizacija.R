@@ -68,8 +68,8 @@ trajanje.z <- trajanje.z + coord_polar("y", start=0)
 #4. PRIMERJAVA ŠTEVILA ISTOSPOLNIH POROK MED ŽENSKAMI IN MED MOŠKIMI V LETIH 2007 - 2017
 
 istospolne <- ggplot(data=tabela4, aes(x=leto, y=stevilo, fill=spol)) +
-  geom_bar(stat="identity", position=position_dodge()) + ggtitle("Istospolne poroke") + xlab("Leto") + ylab("Število") + labs(fill='Spol') + 
-  scale_fill_discrete(labels=c("moski"="moški","zenske"="ženske"))
+  geom_bar(stat="identity", position=position_dodge()) + ggtitle("Istospolne poroke") + xlab("Leto") + ylab("Število") + 
+  scale_fill_discrete(name="Spol", labels=c("moski"="moški","zenske"="ženske"))
 
 #=========================================================================================================================================================================================
 #5. STAROST PRI RAZVEZI
