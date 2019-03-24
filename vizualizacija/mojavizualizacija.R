@@ -46,7 +46,7 @@ trajanje <- ggplot(tabela3 %>% filter(Spremenljivka %in% c("Manj.kot.1.leto", "O
                        breaks = c("Trajanje zakonske zveze manj kot 1 leto", "Trajanje zakonske zveze 1-4 leta","Trajanje zakonske zveze 5-9 let","Trajanje zakonske zveze 10-14 let", "Trajanje zakonske zveze 15 let ali vec"),
                        labels = c("Pod 1 leto", "1-4 leta", "5-9 let", "10-14 let", "15 let ali več"))
 
-
+print(trajanje)
 
 #TRAJANJE ZAKONSKE ZVEZE TORTNI DIAGRAM 
 trajanje.zveze <- tabela3 %>%  filter(Spremenljivka %in% c("Manj.kot.1.leto", "Od.1-4.leta", "Od.5-9.let", "Od.10-14.let", "15.ali.vec")) 

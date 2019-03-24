@@ -86,13 +86,6 @@ Imam 6 tabel - vse v csv obliki.
 
 \newline
 
-<!-- Spodnji graf prikazuje porazdelitev števila naselij v občinah. -->
-
-<!-- ```{r histogram, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Histogram števila naselij v občinah'} -->
-<!-- ggplot(obcine, aes(x=naselja)) + geom_histogram() + -->
-<!--   ggtitle("Pogostost števila naselij") + xlab("Število naselij") + ylab("Število občin") -->
-<!-- ``` -->
-
 ***
 
 # Analiza in vizualizacija podatkov
@@ -103,6 +96,7 @@ source("vizualizacija/mojavizualizacija.R", encoding="UTF-8")
 
 Cilj moje naloge je bil pokazati, da število razvez z leti narašča in da se ljudje poročajo kasneje. Potrditev teh dveh hipotez lahko najdemo na spodnjih grafih.
 
+\newline
 
 Spodnji krivulji prikazujeta povprečno starost ženina in neveste ob sklenitvi zakonske zveze. Opazovano obdobje je od leta 1990 pa vse do danes. Kot vidimo, se ljudje poročajo vedno kasneje. Razlogi za to so najverjetneje podaljšano šolanje, kasnejše zaposlovanje in tudi daljša življenjska doba.
 
@@ -112,7 +106,7 @@ print(povpr.starost)
 
 
 Spodnja 2 grafa prikazujeta povprečno trajanje zakonske zveze do ločitve. 
-Situacijo sem želela predstaviti v dveh oblikah, da še procentualno vidimo kaj pomenijo te številke. 
+Situacijo sem želela predstaviti v dveh oblikah, da še procentualno vidimo kaj pomenijo te krivulje. 
 \newline
 Izkaže se, da se skoraj polovica zvez konča po več kot 15-ih letih in presenetljivo se vsako leto pojavljajo tudi taki, ki se ločijo po manj kot enem letu.
 
@@ -150,7 +144,7 @@ print(otroki)
 
  ***
 # Zemljevid Slovenije po regijah
-```{r zemljevid, echo=FALSE, fig.align='left', warning=FALSE, error=FALSE, message=FALSE, results='hide'}
+```{r zemljevid, echo=FALSE, fig.align='center', warning=FALSE, error=FALSE, message=FALSE, results='hide'}
 print(zemljevid)
 ```
 
@@ -159,7 +153,7 @@ Zemljevid Slovenije - obarvanost glede na število porok po slovenskih regijah.
 ***
 # Napredna analiza podatkov
 
-```{r analiza, echo=FALSE, message=FALSE}
+```{r analiza, echo=FALSE, message=FALSE, fig.align='center'}
 source("analiza/analiza.r", encoding="UTF-8")
 print(graf5)
 ```
@@ -178,4 +172,4 @@ shinyAppDir("shiny", options=list(width="100%", height=250000))
 
 # Zaključek
 
-Delo v R-u je bil zame izziv, ampak mi je delo olajšala zanimiva tema. Potrdila sem svoje hipoteze in dodatno ugotovila, da je ločitev veliko več kot bi si želeli in da so nažalost v večini primerov žrtve teh tudi otroci. Najbolj zabaven del naloge pa je bil izdelovanje aplikacije Shiny, ki je bil hkrati tudi največji izziv.
+Delo v R-u je bil zame izziv, ampak mi je delo olajšala zanimiva tema. Potrdila sem svoje hipoteze in dodatno ugotovila, da je ločitev veliko več kot bi si želeli in da so nažalost v večini primerov žrtve teh tudi otroci. Najtežji del, je bil izdelava aplikacije shiny in napoved števila porok v prihodnosti, najbolj zabavno pa je bilo risati in oblikovati grafe.
