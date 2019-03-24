@@ -11,7 +11,9 @@ library(plotly)
 #1. POVPREČNA STAROST PRI VSTOPU V ZAKONSKO ZVEZO
 povpr.starost <- ggplot(tabela1A %>% filter(Spremenljivka %in% c("Povprecna.starost.zenina", "Povprecna.starost.neveste")),
                   aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() +
-                 ggtitle("Povprečna starost ob vstopu v zakonsko zvezo") + xlab("Leto") + ylab("Število porok") + theme(legend.title=element_blank())
+                  ggtitle("Povprečna starost ob vstopu v zakonsko zvezo") + xlab("Leto") + ylab("Število porok") + theme(legend.title=element_blank()) +
+                  scale_color_discrete(labels=c("Povprecna.starost.neveste"="Povprečna starost neveste",
+                                                "Povprecna.starost.zenina"="Povprečna starost ženina"))
 
 #=========================================================================================================================================================================================
 #2. POROKE PO REGIJAH IN ZEMLJEVID
@@ -42,21 +44,32 @@ zemljevid + scale_fill_gradient(low = "#132B43", high = "#56B1F7", space = "Lab"
 #TRAJANJE ZAKONSKE ZVEZE
 trajanje <- ggplot(tabela3 %>% filter(Spremenljivka %in% c("Manj.kot.1.leto", "Od.1-4.leta", "Od.5-9.let", "Od.10-14.let", "15.ali.vec")),
   aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() +
-  ggtitle("Trajanje zakonske zveze do ločitve") + xlab("Leto") + ylab("Število") + theme(legend.title=element_blank())
+  ggtitle("Trajanje zakonske zveze do ločitve") + xlab("Leto") + ylab("Število") + theme(legend.title=element_blank()) +
+  scale_color_discrete(labels=c("Manj.kot.1.leto" = "Manj kot 1 leto",
+                                "Od.1-4.leta" = "Od 1 - 4 leta",
+                                "Od.5-9.let" = "Od 5 - 9 let",
+                                "Od.10-14.let" = "Od 10 - 14 let",
+                                "15.ali.vec" = "15 ali več let"))
 
 
 #TRAJANJE ZAKONSKE ZVEZE TORTNI DIAGRAM 
 trajanje.z <- tabela3 %>% group_by(Spremenljivka) %>% summarise(sestevek=(sum(Vrednost)/27))
 trajanje.z <- head(trajanje.z, -2)
 trajanje.z <- ggplot(trajanje.z, aes(x = factor(1), y = sestevek, fill = Spremenljivka)) + xlab("") + ylab("") +
-  geom_bar(width = 1, stat = "identity") + ggtitle("Povprečno trajanje zakonske zveze, opazovano obdobje: 1990 - 2017") + theme(legend.title=element_blank())
+  geom_bar(width = 1, stat = "identity") + ggtitle("Povprečno trajanje zakonske zveze, opazovano obdobje: 1990 - 2017") + theme(legend.title=element_blank()) +
+  scale_fill_discrete(labels=c("Manj.kot.1.leto" = "Manj kot 1 leto",
+                                "Od.1-4.leta" = "Od 1 - 4 leta",
+                                "Od.5-9.let" = "Od 5 - 9 let",
+                                "Od.10-14.let" = "Od 10 - 14 let",
+                                "15.ali.vec" = "15 ali več let"))
 trajanje.z <- trajanje.z + coord_polar("y", start=0)
 
 #=========================================================================================================================================================================================
 #4. PRIMERJAVA ŠTEVILA ISTOSPOLNIH POROK MED ŽENSKAMI IN MED MOŠKIMI V LETIH 2007 - 2017
 
 istospolne <- ggplot(data=tabela4, aes(x=leto, y=stevilo, fill=spol)) +
-  geom_bar(stat="identity", position=position_dodge()) + ggtitle("Istospolne poroke") + xlab("Leto") + ylab("Število") + labs(fill='Spol')
+  geom_bar(stat="identity", position=position_dodge()) + ggtitle("Istospolne poroke") + xlab("Leto") + ylab("Število") + labs(fill='Spol') + 
+  scale_fill_discrete(labels=c("moski"="moški","zenske"="ženske"))
 
 #=========================================================================================================================================================================================
 #5. STAROST PRI RAZVEZI
@@ -70,9 +83,7 @@ otroki <- ggplot(tabela3 %>% filter(Spremenljivka %in% c("Razveze.z.otroki", "Ra
   aes(x = Leto, y = Vrednost, color = Spremenljivka)) + geom_line() +
   xlab("Leto") + ylab("Število") + ggtitle("Razveze z otroki ali brez njih") + 
   scale_color_discrete(name = "Legenda",
-                       breaks = c("Razveze.z.otroki",
-                                  "Razveze.brez.otrok"),
-                       labels = c("Razveze.z.otroki", "Razveze.brez.otrok"))
+                       labels = c("Razveze.z.otroki"="Razveze z otroki", "Razveze.brez.otrok"="Razveze brez otrok"))
 
 #=========================================================================================================================================================================================
 

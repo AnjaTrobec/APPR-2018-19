@@ -74,6 +74,9 @@ colnames(tabela4) <- c("leto", "spol", "stevilo")
 tabela5 <- read_csv2("podatki/razvezani-starost.csv", skip=4, col_names = c("starost.pri.razvezi", paste0("", 2011:2018)),  locale = locale(decimal_mark = ",", grouping_mark = ".")) %>% 
                       melt(id.vars = "starost.pri.razvezi", variable.name = "Leto", value.name = "Stevilo")
 
+tabela5$starost.pri.razvezi <- factor(tabela5$starost.pri.razvezi,
+                                      levels=unique(tabela5$starost.pri.razvezi),
+                                      ordered=TRUE)
 
 #=========================================================================================================================================================================================================================================================================================
 #TABELA 6 - vdoveli

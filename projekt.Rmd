@@ -161,15 +161,21 @@ print(graf5)
 Zgornji graf prikazuje napoved o številu porok med letoma 1998 - 2030. Kot vidimo število porok občutno pada, kar potrdi mojo hipotezo. 
 Ljudje se poročajo vedno kasneje in število porok pada.
 
+***
 # Shiny
 
 Za zaključek sem naredila še aplikacijo v Shiny-ju, pri kateri pri ustrezni izbiri regije dobimo podatke o številu porok od leta 2011 - 2018.
 
 ```{r shiny, echo=FALSE, warning=FALSE, fig.align='center'}
-shinyAppDir("shiny", options=list(width="100%", height=250000))
+shinyAppDir("shiny", options=list(width="100%", height=500))
 ```
 
-
+***
 # Zaključek
 
 Delo v R-u je bil zame izziv, ampak mi je delo olajšala zanimiva tema. Potrdila sem svoje hipoteze in dodatno ugotovila, da je ločitev veliko več kot bi si želeli in da so nažalost v večini primerov žrtve teh tudi otroci. Najtežji del, je bil izdelava aplikacije shiny in napoved števila porok v prihodnosti, najbolj zabavno pa je bilo risati in oblikovati grafe.
+
+\newline
+\newline
+
+***
