@@ -12,7 +12,7 @@ runtime: shiny
 
 ```{r setup, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 # Če želimo nastaviti pisave v PDF-ju, odkomentiramo
-# in sledimo navodilom v programu.
+# in sledimo navodilom v programu.  
 # source("fontconfig.r", encoding="UTF-8")
 
 # Uvoz vseh potrebnih knjižnic
@@ -45,9 +45,9 @@ Imam 6 tabel - vse v csv obliki.
 
 1. TABELA - podatki o številu skenjenih zvez letno in povprečna starost ob vstopu v zakonsko zvezo 
     - 'leto' - spremenljivka: časovno obdobje med 1991 - 2017
-    - 'povprecna starost zenina' - spremenljivka: povprecna starost zenina ob vstopu v zakonsko zvezo
-    - 'povprecna starost neveste' - spremenljivka: povprecna starost neveste ob vstopu v zakonsko zvezo
-    - 'stevilo sklenjenih zvez' - spremenljivka: stevilo sklenjenih zakonskih zvez v določenem obdobju
+    - 'povprecna starost zenina' - spremenljivka: povprečna starost ženina ob vstopu v zakonsko zvezo
+    - 'povprecna starost neveste' - spremenljivka: povprečna starost neveste ob vstopu v zakonsko zvezo
+    - 'stevilo sklenjenih zvez' - meritev: število sklenjenih zakonskih zvez v določenem obdobju
 
 \newline
 
@@ -57,7 +57,7 @@ Imam 6 tabel - vse v csv obliki.
     
 \newline    
     
-3. TABELA - podatki o razvezah - 'tabela3'
+3. TABELA - podatki o razvezah
     - 'leto' - spremenljivka: leto v času meritve, v obdobju med 1990 - 2017
     - 'trajanje zakonske zveze po razredih' - spremenljivka: število ločitev pri določenem trajanju zveze
     - 'otroci ali brez otrok' - spremenljivka: ali so zakonci pri ločitvi že imeli otroke ali ne - število takih z otroki in število brez njih
@@ -148,7 +148,9 @@ print(otroki)
 print(zemljevid)
 ```
 
-Zemljevid Slovenije - obarvanost glede na število porok po slovenskih regijah.
+Zemljevid Slovenije - obarvanost glede na število porok po slovenskih regijah. Predstavljeno je povprečno število porok v določeni regiji. 
+\newline
+Izkaže se, da se največ poročajo v osrednjeslovenski, razlog za to je najbolj gosta poseljenost. 
 
 ***
 # Napredna analiza podatkov
@@ -158,7 +160,8 @@ source("analiza/analiza.r", encoding="UTF-8")
 print(graf5)
 ```
 
-Zgornji graf prikazuje napoved o številu porok med letoma 1998 - 2030. Kot vidimo število porok občutno pada, kar potrdi mojo hipotezo. 
+Zgornji graf prikazuje napoved o številu porok med letoma 1998 - 2030. Kot vidimo število porok občutno pada, kar potrdi še mojo drugo hipotezo. 
+\newline
 Ljudje se poročajo vedno kasneje in število porok pada.
 
 ***
