@@ -12,7 +12,7 @@ napoved <- cas %>% mutate(Vrednost=predict(fit, .))
 
 graf5 <- ggplot(napoved, aes(x=Leto, y=Vrednost)) +
   geom_smooth(method=lm, se=FALSE, fullrange = TRUE) +
-  geom_point(data=zakonske, aes(x=Leto, y=Vrednost), color="red", size=4) +
-  labs(title="Napoved števila porok", y="Število porok") + geom_point()
+  geom_point(data=zakonske, aes(x=Leto, y=Vrednost), color="red", size=3) +
+  labs(title="Napoved števila porok", y="Število porok", x="Leto") + geom_point()
 
 
